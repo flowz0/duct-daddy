@@ -2,9 +2,9 @@ import Stat from "./Stat";
 
 export default function Stats() {
   return (
-    <section className="bg-gradient-to-b from-[#ffffff] to-[#E6E6E6] py-32 px-6 max-w-7xl mx-auto rounded-3xl flex flex-col items-center">
+    <section className="bg-gradient-to-b from-[#ffffff] to-[#E6E6E6] py-24 px-6 max-w-7xl mx-auto rounded-3xl flex flex-col items-center justify-center">
       <h2 className="text-2xl font-semibold text-center sm:text-3xl">
-        Why Kansas City 
+        Why Kansas City
         <br />
         <span className="text-[#0080DB] font-bold">Trusts</span> Duct Daddy
       </h2>
