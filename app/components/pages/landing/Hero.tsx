@@ -13,7 +13,7 @@ export default function Hero() {
         <Link href="/book-online" className="bg-[#0080DB] text-[#E6E6E6] mt-8 py-2 px-4 rounded-md hover:bg-[hsl(205,100%,33%)] active:bg-[hsl(205,100%,23%)]">
           Book Online
         </Link>
-        <div className="flex items-center gap-4 mt-8">
+        <div className="flex items-center gap-3 mt-6">
           <div className="flex gap-0.5">
             <BsStarFill className="text-amber-500 w-4 h-4" />
             <BsStarFill className="text-amber-500 w-4 h-4" />
@@ -21,7 +21,7 @@ export default function Hero() {
             <BsStarFill className="text-amber-500 w-4 h-4" />
             <BsStarHalf className="text-amber-500 w-4 h-4" />
           </div>
-          <p className="text-[#333333]">4.97/5 (143 reviews)</p>
+          <p className="text-[#333333]"><span className="font-semibold">4.97/5</span> (143 reviews)</p>
         </div>
       </header>
       <div className="md:w-1/2">
