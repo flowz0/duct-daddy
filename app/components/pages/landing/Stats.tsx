@@ -2,23 +2,26 @@ import Stat from "./Stat";
 
 export default function Stats() {
   return (
-    <section className="bg-gradient-to-b from-[#ffffff] to-[#E6E6E6] py-24 px-6 max-w-7xl mx-auto rounded-3xl flex flex-col items-center justify-center">
+    <section className="bg-gradient-to-b from-[#ffffff] to-[#E6E6E6] py-32 px-6 max-w-7xl mx-auto rounded-3xl flex flex-col items-center justify-center">
       <h2 className="text-2xl font-semibold text-center sm:text-3xl">
-        Why Kansas City
+        <span className="text-[#0080DB] font-bold">Why</span> Kansas City
         <br />
-        <span className="text-[#0080DB] font-bold">Trusts</span> Duct Daddy
+        Trusts Duct Daddy
       </h2>
-      <div className="mt-16 flex flex-col gap-12 md:flex-row">
+      <div className="mt-16 flex flex-wrap justify-center flex-col gap-16 md:flex-row">
         <Stat
-          title="3,000+ Vents Cleaned"
+          stat="3,000+"
+          title="Vents Cleaned"
           desc="We&apos;ve worked in everything from apartments to big custom homes."
         />
         <Stat
-          title="100% Flat-Rate Pricing"
+          stat="100%"
+          title="Flat-Rate Pricing"
           desc="What we quote is what you pay. No surprises, no pressure."
         />
         <Stat
-          title="5-Star Rated Across KC"
+          stat="5-Star"
+          title="Rated Across KC"
           desc="Trusted in over 25 cities across Missouri and Kansas."
         />
       </div>
