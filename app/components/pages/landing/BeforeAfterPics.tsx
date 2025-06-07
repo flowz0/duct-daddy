@@ -13,9 +13,9 @@ export default function BeforeAfterPics() {
   return (
     <section className="py-32 px-6 max-w-7xl mx-auto ">
       <h2 className="text-3xl font-semibold text-center sm:text-4xl">
-        See the
+        See the Duct Daddy
         <br />
-        Duct Daddy <span className="text-[#0080DB] font-bold">Difference</span>
+        <span className="text-[#0080DB] font-bold">Difference</span>
       </h2>
       <p className="max-w-xs mx-auto text-center mt-4">
         Real photos from homes in Oak Grove, Blue Springs, and all across KC.
