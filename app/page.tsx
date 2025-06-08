@@ -5,6 +5,7 @@ import BeforeAfterPics from "./components/pages/landing/BeforeAfterPics";
 import ReviewSection from "./components/pages/landing/ReviewSection";
 import ServiceArea from "./components/pages/landing/ServiceArea";
 import FAQs from "./components/pages/landing/FAQs";
+import CTA from "./components/CTA";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <ReviewSection />
       <ServiceArea />
       <FAQs />
+      <CTA />
     </main>
   );
 }
