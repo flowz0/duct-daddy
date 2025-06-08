@@ -29,7 +29,7 @@ export default function Navbar() {
   }, [isOpen]);
 
   return (
-    <nav className="bg-[#E6E6E6] fixed h-20 w-full z-50">
+    <nav className="bg-[#ffffff] shadow shadow-[hsl(0,0%,80%)] fixed h-24 w-full z-50">
       <div className="flex justify-between items-center h-full max-w-7xl mx-auto px-6">
         <div className="flex gap-8">
           <Link

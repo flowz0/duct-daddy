@@ -5,9 +5,7 @@ export default function ReviewSection() {
   return (
     <section className="py-32 mx-auto">
       <h2 className="text-3xl font-semibold text-center sm:text-4xl">
-        What Our <span className="text-[#0080DB] font-bold">Customers</span>
-        <br />
-        Are Saying
+        What Our <span className="text-[#0080DB] font-bold">Customers</span> Are Saying
       </h2>
 
       <div className="mt-12 flex flex-col gap-2">

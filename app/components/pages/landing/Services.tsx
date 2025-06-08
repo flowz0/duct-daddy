@@ -8,7 +8,7 @@ export default function Services() {
       <h2 className="text-3xl font-semibold text-center sm:text-4xl">
         <span className="text-[#0080DB] font-bold">Services</span> We Offer
       </h2>
-      <div className="mt-16 flex flex-col gap-8 justify-center flex-wrap md:flex-row">
+      <div className="mt-12 flex flex-col gap-8 justify-center flex-wrap md:flex-row">
         <Service
           Icon={BsWind}
           title="Air Duct Cleaning"
