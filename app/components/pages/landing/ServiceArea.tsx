@@ -2,8 +2,6 @@ import Image from "next/image";
 
 import PlaceholderImg from "@/public/1920x1080.svg";
 import ServiceAreaCard from "./ServiceAreaCard";
-import Link from "next/link";
-
 export default function ServiceArea() {
   return (
     <section className="py-32 px-6 max-w-7xl mx-auto">
