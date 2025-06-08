@@ -3,6 +3,7 @@ import Stats from "./components/pages/landing/Stats";
 import Services from "./components/pages/landing/Services";
 import BeforeAfterPics from "./components/pages/landing/BeforeAfterPics";
 import ReviewSection from "./components/pages/landing/ReviewSection";
+import ServiceArea from "./components/pages/landing/ServiceArea";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Services />
       <BeforeAfterPics />
       <ReviewSection />
+      <ServiceArea />
     </main>
   );
 }
