@@ -4,6 +4,7 @@ import Services from "./components/pages/landing/Services";
 import BeforeAfterPics from "./components/pages/landing/BeforeAfterPics";
 import ReviewSection from "./components/pages/landing/ReviewSection";
 import ServiceArea from "./components/pages/landing/ServiceArea";
+import FAQs from "./components/pages/landing/FAQs";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <BeforeAfterPics />
       <ReviewSection />
       <ServiceArea />
+      <FAQs />
     </main>
   );
 }

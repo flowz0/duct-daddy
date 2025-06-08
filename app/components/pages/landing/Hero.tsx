@@ -8,7 +8,7 @@ export default function Hero() {
     <section className="pt-60 pb-32 px-6 max-w-7xl mx-auto flex flex-col  gap-8 lg:flex-row">
       <header className="flex flex-col items-center lg:w-1/2 lg:items-start">
         <h1 className="text-4xl font-semibold max-w-lg text-center sm:text-5xl lg:text-start">
-          Kansas City&apos;s <span className="text-[#0080DB] font-bold">Trusted</span> Air Duct & Dryer Vent Cleaning Experts
+          Kansas City&apos;s Trusted Air Duct & Dryer Vent Cleaning Experts
         </h1>
         <Link href="/book-online" className="bg-[#0080DB] text-[#E6E6E6] mt-12 py-2 px-4 rounded-md hover:bg-[hsl(205,100%,33%)] active:bg-[hsl(205,100%,23%)]">
           Book Online
