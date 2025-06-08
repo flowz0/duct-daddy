@@ -11,7 +11,7 @@ const images = [
 
 export default function BeforeAfterPics() {
   return (
-    <section className="py-32 px-6 max-w-7xl mx-auto ">
+    <section className="py-32 px-6 max-w-7xl mx-auto">
       <h2 className="text-3xl font-semibold text-center sm:text-4xl">
         See the Duct Daddy
         <br />
