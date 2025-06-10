@@ -9,12 +9,12 @@ export default function FAQ({ question, answer }: FAQProps) {
   return (
     <button
       onClick={() => setIsOpen(!isOpen)}
-      className="bg-[hsl(0,0%,14%)] py-6 px-7 w-full h-fit rounded-lg cursor-pointer"
+      className="bg-[#ffffff] shadow shadow-[hsl(0,0%,80%)] py-6 px-7 w-full h-fit rounded-lg cursor-pointer"
     >
       <h3 className="flex items-center justify-between gap-4">
-        <span className="text-[#f5f5f5] text-lg text-start">{question}</span>
+        <span className="text-[#333333] font-semibold text-lg text-start">{question}</span>
         <span className={`transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}>
-          <FaPlus className="text-[#ffffff] w-4 h-4" />
+          <FaPlus className="text-[#333333] w-4 h-4" />
         </span>
       </h3>
       <AnimatePresence initial={false}>
@@ -32,7 +32,7 @@ export default function FAQ({ question, answer }: FAQProps) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="text-[#f5f5f5] mt-4 text-start text-base/[1.6rem]"
+              className="text-[#333333] mt-4 text-start text-base/[1.6rem]"
             >
               {answer}
             </motion.p>

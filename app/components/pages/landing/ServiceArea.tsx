@@ -19,10 +19,7 @@ export default function ServiceArea() {
         />
         <div>
           <h2 className="text-xl font-semibold sm:text-2xl">Service Areas</h2>
-          <div className="grid grid-cols-4 gap-x-6 gap-y-8 mt-6">
-            <ServiceAreaCard />
-            <ServiceAreaCard />
-            <ServiceAreaCard />
+          <div className="grid grid-cols-1 gap-x-6 gap-y-8 mt-6 sm:grid-cols-3">
             <ServiceAreaCard />
             <ServiceAreaCard />
             <ServiceAreaCard />

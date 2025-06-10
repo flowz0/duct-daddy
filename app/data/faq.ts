@@ -21,6 +21,10 @@ const faqData: FAQProps[] = [
     question: "Do you clean new construction homes or large buildings?",
     answer: "Yes, we work with builders and property managers. Contact us for a quote."
   },
+  {
+    question: "How long does the cleaning take?",
+    answer: "Most jobs take 1.5 to 3 hours depending on the size of the home and how many systems and vents need cleaned."
+  },
 ];
 
 export default faqData;

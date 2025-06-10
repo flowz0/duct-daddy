@@ -26,11 +26,11 @@ export default function Hero() {
           </p>
         </div>
       </header>
-      <div className="lg:w-1/2">
+      <div className="mt-8 lg:mt-0 lg:w-1/2">
         <Image
           src={HeroImg}
           alt="Hero image"
-          className="h-full w-auto rounded-3xl"
+          className="h-auto w-full rounded-3xl"
           priority
         />
       </div>
