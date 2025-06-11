@@ -6,9 +6,8 @@ import { BsFacebook, BsGoogle, BsTiktok } from "react-icons/bs";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#ffffff]">
+    <footer>
       <div className="py-32 px-6 max-w-7xl mx-auto">
-
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
           <Image
             src={DuctDaddyLogo}
@@ -44,7 +43,6 @@ export default function Footer() {
             </div>
           </div>
         </div>
-
         <div className="flex flex-col gap-2 mt-24 md:justify-between md:flex-row">
           <p className="font-semibold">© 2025 Duct Daddy</p>
           <div className="flex flex-col gap-2 md:gap-8 md:flex-row">
@@ -52,7 +50,6 @@ export default function Footer() {
             <Link href="/faq">Privacy Policy</Link>
           </div>
         </div>
-
       </div>
     </footer>
   );
