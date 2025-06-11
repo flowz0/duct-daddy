@@ -29,7 +29,7 @@ export default function Navbar() {
   }, [isOpen]);
 
   return (
-    <nav className="bg-[#ffffff] shadow shadow-[hsl(0,0%,80%)] fixed h-24 w-full z-50">
+    <nav className="bg-[#ffffff] shadow shadow-[hsl(0,0%,80%)] fixed h-20 w-full z-50">
       <div className="flex justify-between items-center h-full max-w-7xl mx-auto px-6">
         <div className="flex gap-8">
           <Link
@@ -117,7 +117,7 @@ export default function Navbar() {
             animate={{ height: "100vh", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
-            className="md:hidden bg-[#E6E6E6] mt-4"
+            className="md:hidden bg-[#ffffff] pt-2"
           >
             <ul className="flex flex-col gap-y-2 px-8 font-bold text-3xl/[42px] tracking-[0.016em]">
               {Links.map((link) => (
