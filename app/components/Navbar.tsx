@@ -67,7 +67,7 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-4">
-          <AnimatedLink href="/">
+          <AnimatedLink href="/" className="hidden lg:block">
             (816) 708-2608
           </AnimatedLink>
           <Link
