@@ -44,7 +44,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="flex flex-col gap-2 mt-24 md:justify-between md:flex-row">
-          <p className="font-semibold">© 2025 Duct Daddy</p>
+          <p>© 2025 Duct Daddy</p>
           <div className="flex flex-col gap-2 md:gap-8 md:flex-row">
             <Link href="/faq">Terms of Service</Link>
             <Link href="/faq">Privacy Policy</Link>
