@@ -24,7 +24,7 @@ export default function CTA() {
       <div className="bg-[#ffffff] shadow shadow-[hsl(0,0%,80%)] py-8 px-6 rounded-xl flex flex-col items-center sm:py-16 sm:px-12">
         <header className="flex flex-col">
           <h2 className="text-3xl font-semibold text-center md:text-4xl">
-            <span className="text-[#0080DB] font-semibold">Breathe</span> without worries
+            Breathe without worries
           </h2>
           <p className="mt-4 text-center max-w-4xl">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore tenetur quisquam tempore perferendis neque saepe exercitationem quasi quam aliquid aut repellat, est eius reiciendis animi! Error facilis quidem hic nulla.

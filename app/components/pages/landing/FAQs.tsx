@@ -11,7 +11,7 @@ export default function FAQs() {
     <section id="faqs" className="pt-32 px-6 max-w-7xl mx-auto lg:pb-32">
       <div className="flex flex-col items-center">
         <h2 className="text-3xl font-semibold text-center md:text-4xl">
-          Frequently Asked <span className="text-[#0080DB] font-bold">Questions</span>
+          Frequently Asked Questions
         </h2>
       </div>
 
