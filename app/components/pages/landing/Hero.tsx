@@ -31,6 +31,7 @@ export default function Hero() {
           src={HeroImg}
           alt="Hero image"
           className="h-auto w-full rounded-3xl"
+          draggable={false}
           priority
         />
       </div>
