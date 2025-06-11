@@ -67,9 +67,9 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-4">
-          <p className="text-[#333333] font-semibold text-base/[32px] tracking-[0.016em] hidden lg:block">
+          <AnimatedLink href="/">
             (816) 708-2608
-          </p>
+          </AnimatedLink>
           <Link
             href="/book-online"
             className={`hidden duration-300 transition-colors py-1 px-4 font-semibold text-base/[32px] tracking-[0.016em] rounded-lg md:block
