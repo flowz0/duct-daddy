@@ -47,7 +47,6 @@ export default function Footer() {
           <p>© 2025 Duct Daddy</p>
           <div className="flex flex-col gap-2 md:gap-8 md:flex-row">
             <Link href="/faq">Terms of Service</Link>
-            {" "} | {" "}
             <Link href="/faq">Privacy Policy</Link>
           </div>
         </div>
