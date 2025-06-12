@@ -2,7 +2,8 @@ import Image from "next/image"
 
 import DuctDaddyLogo from "@/public/Duct-Daddy-01.png";
 import Link from "next/link";
-import { BsFacebook, BsGoogle, BsTiktok } from "react-icons/bs";
+import { BsFacebook, BsGoogle } from "react-icons/bs";
+import { FaTiktok } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -37,9 +38,15 @@ export default function Footer() {
             <p>Questions or feedback?</p>
             <p>We&apos;d love to hear from you.</p>
             <div className="flex items-center gap-6 mt-6">
-              <BsFacebook className="w-6 h-6" />
-              <BsGoogle className="w-6 h-6" />
-              <BsTiktok className="w-6 h-6" />
+              <Link href="/">
+                <BsFacebook className="w-6 h-6" />
+              </Link>
+              <Link href="/">
+                <BsGoogle className="w-6 h-6" />
+              </Link>
+              <Link href="/">
+                <FaTiktok className="w-6 h-6" />
+              </Link>
             </div>
           </div>
         </div>
