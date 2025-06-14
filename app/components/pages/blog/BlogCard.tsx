@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function BlogCard() {
   return (
-    <article className="max-w-1/3">
+    <article className="max-w-full md:max-w-1/2 lg:max-w-1/3">
       <Image
         src={PlaceholderImg}
         alt="Blog cover image"
