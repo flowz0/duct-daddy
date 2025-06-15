@@ -13,7 +13,7 @@ export default function Footer() {
           <Image
             src={DuctDaddyLogo}
             alt="Duct daddy logo"
-            className="h-48 w-auto object-cover"
+            className="h-40 w-auto object-cover"
           />
           <div className="flex flex-col gap-2">
             <h4 className="font-bold">
