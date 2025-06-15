@@ -38,13 +38,13 @@ export default function Footer() {
             <p>Questions or feedback?</p>
             <p>We&apos;d love to hear from you.</p>
             <div className="flex items-center gap-6 mt-6">
-              <Link href="/">
+              <Link href="https://www.facebook.com/ductdaddykc/" target="_blank">
                 <BsFacebook className="w-6 h-6" />
               </Link>
-              <Link href="/">
+              <Link href="https://maps.app.goo.gl/a1neN8MTXV9o5QiL9" target="_blank">
                 <BsGoogle className="w-6 h-6" />
               </Link>
-              <Link href="/">
+              <Link href="https://www.tiktok.com/@ductdaddykc" target="_blank">
                 <FaTiktok className="w-6 h-6" />
               </Link>
             </div>
