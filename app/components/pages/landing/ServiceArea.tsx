@@ -12,7 +12,7 @@ export default function ServiceArea() {
         Kansas City and Surrounding Areas
       </h2>
 
-      <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
+      <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2">
         <Image
           src={ServiceAreaImg}
           alt="Service area image"
@@ -21,7 +21,7 @@ export default function ServiceArea() {
         />
         <div>
           <h2 className="text-xl font-semibold sm:text-2xl">Service Areas</h2>
-          <div className="grid grid-cols-1 gap-x-6 gap-y-8 mt-4 sm:grid-cols-3">
+          <div className="grid grid-cols-1 gap-x-4 gap-y-8 mt-4 sm:grid-cols-3">
             <ServiceAreaCard location="Oak Grove" />
             <ServiceAreaCard location="Grain Valley" />
             <ServiceAreaCard location="Blue Springs" />

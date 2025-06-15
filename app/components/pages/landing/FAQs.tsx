@@ -15,7 +15,7 @@ export default function FAQs() {
         </h2>
       </div>
 
-      <div className="mt-12 flex flex-col gap-4 lg:flex-row">
+      <div className="mt-8 flex flex-col gap-4 lg:flex-row">
         <div className="flex flex-col gap-4 w-full lg:w-1/2">
           {leftColumn.map(({ question, answer }, index) => (
             <FAQ key={index} question={question} answer={answer} />

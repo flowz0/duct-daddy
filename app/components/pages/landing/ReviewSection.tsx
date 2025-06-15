@@ -8,7 +8,7 @@ export default function ReviewSection() {
         What Our <span className="text-[#0080DB] font-bold">Customers</span> Are Saying
       </h2>
 
-      <div className="mt-12 flex flex-col gap-2">
+      <div className="mt-8 flex flex-col gap-2">
         <ReviewRow reviews={topRowReviews} direction="right" />
         <ReviewRow reviews={bottomRowReviews} direction="left" />
       </div>

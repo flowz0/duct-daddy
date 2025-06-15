@@ -10,7 +10,7 @@ export default function Services() {
       <h2 className="text-3xl font-semibold text-center sm:text-4xl">
         Services We Offer
       </h2>
-      <div className="mt-12 flex flex-col gap-4 justify-center flex-wrap md:flex-row">
+      <div className="mt-8 flex flex-col gap-4 justify-center flex-wrap md:flex-row">
         <Service
           img={AirDuctImg}
           title="Air Duct Cleaning"

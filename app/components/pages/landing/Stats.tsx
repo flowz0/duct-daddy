@@ -8,7 +8,7 @@ export default function Stats() {
         <br />
         Trusts Duct Daddy
       </h2>
-      <div className="mt-16 flex flex-wrap justify-center flex-col gap-16 md:flex-row">
+      <div className="mt-12 flex flex-wrap justify-center flex-col gap-16 md:flex-row">
         <Stat
           stat="3,000+"
           title="Vents Cleaned"
