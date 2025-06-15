@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Carousel from "./Carousel";
 
 import PlaceholderImg from "@/public/1920x1080.svg";
@@ -13,10 +12,10 @@ export default function BeforeAfterPics() {
   return (
     <section className="py-32 px-6 max-w-7xl mx-auto">
       <h2 className="text-3xl font-semibold text-center sm:text-4xl">
-        See the Duct Daddy Difference
+        See The Duct Daddy Difference
       </h2>
-      <p className="max-w-sm mx-auto text-center mt-4">
-        Real photos from homes in Oak Grove, Blue Springs, and all across KC.
+      <p className="text-center mt-4">
+        Real photos from homes in Oak Grove and all across KC.
       </p>
       <Carousel images={images} />
     </section>
