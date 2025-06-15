@@ -8,7 +8,7 @@ interface ServiceProps {
 
 export default function Service({ img, title, desc }: ServiceProps) {
   return (
-    <div className="bg-[#ffffff] shadow shadow-[hsl(0,0%,80%)] py-12 px-6 rounded-md flex flex-col items-center">
+    <div className="bg-[#ffffff] shadow shadow-[hsl(0,0%,80%)] py-12 px-6 rounded-xl flex flex-col items-center">
       <Image
         src={img}
         alt={title + "image"}
