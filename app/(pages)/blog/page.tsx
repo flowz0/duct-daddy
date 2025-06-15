@@ -14,6 +14,7 @@ export default function Blog() {
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam quas ab vero nostrum, illo quam ullam nisi, ea aspernatur voluptas officiis porro tempora adipisci amet inventore ipsa earum! Cum, doloremque?
           </p>
         </header>
+        <h2 className="mt-12 text-2xl font-semibold md:text-3xl">Recent Blogs</h2>
         <LatestBlogs />
       </article>
       <FAQs />
