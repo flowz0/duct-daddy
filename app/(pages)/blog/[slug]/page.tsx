@@ -7,7 +7,7 @@ import LatestBlogs from "@/app/components/pages/blog/LatestBlogs";
 export default function BlogPage() {
   return (
     <>
-      <article className="pt-40 pb-32 px-6 max-w-7xl mx-auto md:pt-40 md:pb-32">
+      <article className="pt-32 pb-16 px-6 max-w-7xl mx-auto md:pt-40 md:pb-16">
         <header>
           <h1 className="text-4xl max-w-4xl mx-auto font-semibold text-center sm:text-5xl">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, pariatur.
@@ -17,6 +17,7 @@ export default function BlogPage() {
             src={PlaceholderImg}
             alt="Blog image"
             className="mt-16 h-full w-auto object-cover rounded-lg"
+            draggable={false}
           />
         </header>
         <section className="mt-12 max-w-2xl mx-auto">
