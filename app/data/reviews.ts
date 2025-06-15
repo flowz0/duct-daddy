@@ -35,14 +35,14 @@ export const topRowReviews: Review[] = [
   {
     id: 4, 
     name: "Ray Ruark",
-    brand: "Blue Springs",
+    // brand: "Blue Springs",
     message: "They showed up , were very friendly and really helped us out. Had birds nest in a vent. Would highly recommend them.",
     avatar: PlaceholderImg
   },
   {
     id: 5, 
     name: "Rebecca Green",
-    brand: "Blue Springs",
+    // brand: "Blue Springs",
     message: "Not only did duct daddy do a great job with our vents…. The owner Was super knowledgeable and easy to work with!",
     avatar: PlaceholderImg
   },
