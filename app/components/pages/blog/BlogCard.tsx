@@ -12,8 +12,8 @@ export default function BlogCard() {
         className="max-h-96 w-auto object-cover rounded-lg"
       />
       <div className="mt-2 flex justify-between">
-        <p>Karson Kolle</p>
-        <p>6/11/2025</p>
+        <p className="text-sm">Karson Kolle</p>
+        <p className="text-sm">6/11/2025</p>
       </div>
       <div className="mt-2 flex flex-col">
         <h3 className="text-xl font-semibold line-clamp-2 md:text-2xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui omnis soluta tempore expedita totam modi nam, esse nulla sint id vero pariatur molestiae, quaerat fuga, ipsum minima culpa aut explicabo.</h3>
