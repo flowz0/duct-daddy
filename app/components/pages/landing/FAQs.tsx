@@ -8,7 +8,7 @@ export default function FAQs() {
   const rightColumn = faqData.filter((_, index) => index % 2 === 1);
 
   return (
-    <section id="faqs" className="pt-32 px-6 max-w-7xl mx-auto lg:pb-32">
+    <section id="faqs" className="py-32 px-6 max-w-7xl mx-auto">
       <div className="flex flex-col items-center">
         <h2 className="text-3xl font-semibold text-center md:text-4xl">
           Frequently Asked Questions
