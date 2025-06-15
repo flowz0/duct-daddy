@@ -31,7 +31,7 @@ export default function Navbar() {
   return (
     <nav className="bg-[#ffffff] shadow shadow-[hsl(0,0%,80%)] fixed h-20 w-full z-50">
       <div className="flex justify-between items-center h-full max-w-7xl mx-auto px-6">
-        <div className="flex gap-8">
+        <div className="flex gap-6">
           <Link
             href="/"
             onClick={() => setIsOpen(false)}
@@ -41,7 +41,7 @@ export default function Navbar() {
             {/* : */} <Image
               src={BrandLogo}
               alt="Netflows logo"
-              className="h-14 w-auto"
+              className="h-12 w-auto"
               draggable="false"
               priority={true}
             />
@@ -49,7 +49,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Links */}
-          <ul className="hidden text-[#333333] font-semibold text-base/[32px] tracking-[0.016em] md:flex md:items-center md:gap-x-6">
+          <ul className="hidden text-[#333333] font-semibold text-base/[32px] tracking-[0.016em] md:flex md:items-center md:gap-x-4">
             {Links.map((link) => (
               <li key={link.href}>
                 <AnimatedLink
