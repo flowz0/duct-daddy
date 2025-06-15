@@ -1,7 +1,7 @@
 import { Review } from "@/app/data/reviews";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { BsStarFill, BsStarHalf } from "react-icons/bs";
+import { BsStarFill } from "react-icons/bs";
 
 interface Props {
   review: Review;
@@ -24,10 +24,10 @@ export default function ReviewCard({ review, direction }: Props) {
         <BsStarFill className="text-amber-500 w-6 h-6" />
         <BsStarFill className="text-amber-500 w-6 h-6" />
         <BsStarFill className="text-amber-500 w-6 h-6" />
-        <BsStarHalf className="text-amber-500 w-6 h-6" />
+        <BsStarFill className="text-amber-500 w-6 h-6" />
       </div>
       <p className="text-[hsl(0,0%,80%)] text-lg mt-6">
-        &quot; {review.message} &quot;
+        &quot;{review.message}&quot;
       </p>
       <div className="flex items-center gap-4 mt-6">
         <Image
@@ -39,7 +39,9 @@ export default function ReviewCard({ review, direction }: Props) {
         />
         <div>
           <p className="text-[hsl(0,0%,80%)]">{review.name}</p>
-          <p className="text-[hsl(0,0%,60%)]">{review.brand}</p>
+          {review.brand && (
+            <p className="text-[hsl(0,0%,60%)]">{review.brand}</p>
+          )}
         </div>
       </div>
     </motion.div>
