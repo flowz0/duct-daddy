@@ -5,7 +5,7 @@ import HeroImg from "@/public/duct-daddy-vehicle.png";
 
 export default function Hero() {
   return (
-    <section className="pt-40 pb-32 px-6 max-w-7xl mx-auto flex flex-col gap-8 md:pt-60 md:pb-32 lg:flex-row">
+    <section className="pt-32 pb-32 px-6 max-w-7xl mx-auto flex flex-col gap-8 lg:pt-60 lg:flex-row">
       <header className="flex flex-col items-center lg:w-1/2 lg:items-start">
         <h1 className="text-4xl font-semibold max-w-lg text-center sm:text-5xl lg:text-start">
           Kansas City&apos;s Trusted Air Duct & Dryer Vent Cleaning Experts
