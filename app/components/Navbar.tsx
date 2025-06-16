@@ -13,8 +13,8 @@ export default function Navbar() {
   const Links = [
     { name: "Services", href: "/services" },
     { name: "Blog", href: "/blog" },
-    { name: "FAQs", href: "/faqs" },
     { name: "Service Area", href: "/service-area" },
+    { name: "FAQs", href: "/faqs" },
   ];
 
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +31,7 @@ export default function Navbar() {
   return (
     <nav className="bg-[#ffffff] shadow shadow-[hsl(0,0%,80%)] fixed h-20 w-full z-50">
       <div className="flex justify-between items-center h-full max-w-7xl mx-auto px-6">
-        <div className="flex gap-6">
+        <div className="flex gap-8">
           <Link
             href="/"
             onClick={() => setIsOpen(false)}
@@ -52,7 +52,7 @@ export default function Navbar() {
           <ul className="hidden text-[#333333] font-semibold text-base/[32px] tracking-[0.016em] md:flex md:items-center md:gap-x-4">
             {Links.map((link) => (
               <li key={link.href}>
-                <AnimatedLink
+                <Link
                   href={link.href}
                   className={`${pathname === link.href
                     ? "duration-300 transition-colors text-[#00b4ff]"
@@ -60,7 +60,7 @@ export default function Navbar() {
                     }`}
                 >
                   {link.name}
-                </AnimatedLink>
+                </Link>
               </li>
             ))}
           </ul>
