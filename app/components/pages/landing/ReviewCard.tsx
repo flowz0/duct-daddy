@@ -13,7 +13,7 @@ export default function ReviewCard({ review, direction }: Props) {
 
   return (
     <motion.div
-      className="min-w-[300px] bg-[#ffffff] text-[#333333] rounded-xl shadow shadow-[hsl(0,0%,80%)] py-10 px-8 md:min-w-[400px]"
+      className="relative min-w-[300px] bg-[#ffffff] text-[#333333] rounded-xl shadow shadow-[hsl(0,0%,80%)] py-10 px-8 md:min-w-[400px]"
       initial={{ opacity: 0, x: initialX }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
