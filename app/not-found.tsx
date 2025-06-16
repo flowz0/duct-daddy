@@ -1,14 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import NotFoundImg from "@/public/404-not-found.png";
-import ReviewSection from "./components/pages/landing/ReviewSection";
 import CTA from "./components/CTA";
 import FAQs from "./components/pages/landing/FAQs";
 
 export default function NotFoundPage() {
   return (
     <>
-      <main className="pt-40 pb-32 px-6 max-w-7xl mx-auto flex flex-col gap-8 md:pt-60 md:pb-32 lg:flex-row">
+      <main className="pt-32 pb-16 px-6 max-w-7xl mx-auto flex flex-col items-center gap-8 md:pt-36 lg:flex-row">
         <header className="flex flex-col items-center lg:w-1/2 lg:items-start">
           <h1 className="text-4xl font-bold max-w-xl text-center sm:text-5xl lg:text-start">
             Page Not Found But Clean Air is A Click Away
@@ -29,7 +28,6 @@ export default function NotFoundPage() {
           />
         </div>
       </main>
-      <ReviewSection />
       <FAQs />
       <CTA />
     </>
