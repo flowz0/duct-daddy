@@ -12,7 +12,7 @@ export default function Service({ img, title, desc }: ServiceProps) {
       <Image
         src={img}
         alt={title + "image"}
-        className="rounded-lg h-16 w-auto"
+        className="rounded-lg h-20 w-auto"
         draggable={false}
       />
       <h3 className="mt-6 text-xl font-semibold text-center sm:text-2xl">
