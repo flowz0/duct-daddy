@@ -49,14 +49,15 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Links */}
-          <ul className="hidden text-[#333333] font-semibold text-base/[32px] tracking-[0.016em] md:flex md:items-center md:gap-x-4">
+          <ul className="hidden font-semibold text-base/[32px] tracking-[0.016em] md:flex md:items-center md:gap-x-4">
             {Links.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`${pathname === link.href
-                    ? "duration-300 transition-colors text-[#00b4ff]"
-                    : ""
+                  className={`transition-colors duration-500
+                    ${pathname === link.href
+                      ? "text-[#333333]"
+                      : "text-[hsl(0,0%,50%)] hover:text-[#333333]"
                     }`}
                 >
                   {link.name}
@@ -67,19 +68,28 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-4">
-          <AnimatedLink href="/" className="hidden text-[#333333] font-semibold text-base/[32px] tracking-[0.016em] lg:block">
-            (816) 708-2608
-          </AnimatedLink>
-          <Link
-            href="/book-online"
-            className={`hidden duration-300 transition-colors py-1 px-4 font-semibold text-base/[32px] tracking-[0.016em] rounded-lg md:block
-            ${pathname === "/book-online"
-                ? " bg-[hsl(205,100%,53%)] text-[#ffffff] hover:bg-[hsl(205,100%,33%)] active:bg-[hsl(205,100%,23%)]"
-                : "bg-[#0080DB] text-[#ffffff] hover:bg-[hsl(205,100%,33%)] active:bg-[hsl(205,100%,23%)]"
-              } `}
-          >
-            Book Online
-          </Link>
+
+          {pathname === "/blog" || pathname === "/dashboard" || pathname === "/admin" || pathname === "/register" ? (
+            <Link href="/dashboard" className="hidden bg-[#0080DB] text-[#ffffff] duration-300 transition-colors py-1 px-4 font-semibold text-base/[32px] tracking-[0.016em] rounded-lg md:block hover:bg-[hsl(205,100%,33%)] active:bg-[hsl(205,100%,23%)]">
+              Dashboard
+            </Link>
+          ) : (
+            <>
+              <AnimatedLink href="/" className="hidden text-[hsl(0,0%,50%)] hover:text-[#333333] font-semibold text-base/[32px] tracking-[0.016em] lg:block">
+                (816) 708-2608
+              </AnimatedLink>
+              <Link
+                href="/book-online"
+                className={`hidden duration-300 transition-colors py-1 px-4 font-semibold text-base/[32px] tracking-[0.016em] rounded-lg md:block
+              ${pathname === "/book-online"
+                    ? " bg-[hsl(205,100%,53%)] text-[#ffffff] hover:bg-[hsl(205,100%,33%)] active:bg-[hsl(205,100%,23%)]"
+                    : "bg-[#0080DB] text-[#ffffff] hover:bg-[hsl(205,100%,33%)] active:bg-[hsl(205,100%,23%)]"
+                  } `}
+              >
+                Book Online
+              </Link>
+            </>
+          )}
         </div>
 
 
