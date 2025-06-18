@@ -10,21 +10,24 @@ export default function Services() {
       <h2 className="text-3xl font-semibold text-center sm:text-4xl">
         Services We Offer
       </h2>
-      <div className="mt-8 flex flex-col gap-4 justify-center flex-wrap md:flex-row">
+      {/* <p className="mt-2 max-w-md text-center">
+        Breathe cleaner air and keep your system running at its best with our professional HVAC services.
+      </p> */}
+      <div className="mt-8 flex flex-wrap justify-center flex-col gap-4 md:flex-row">
         <Service
           img={AirDuctImg}
           title="Air Duct Cleaning"
-          desc="We clean your entire HVAC system — supply vents, return vents, trunk lines, and furnace — using powerful negative air machines and rotary brushes."
+          desc="HVAC cleaning including vents, trunk lines, and furnace using powerful negative air machines and rotary brushes."
         />
         <Service
           img={DyerVentImg}
           title="Dryer Vent Cleaning"
-          desc="We remove lint, debris, and buildup from your entire dryer vent line. Helps prevent fires, speeds up drying times, and lowers energy bills."
+          desc="Thorough lint and debris removal from your dryer vent to prevent fires, speed up drying, and reduce energy costs."
         />
         <Service
           img={MaintenanceImg}
           title="Preventative Maintenance"
-          desc="Seasonal checkups and tune-ups to keep your system running efficiently. Extend HVAC lifespan and catch small issues before they become expensive problems."
+          desc="Seasonal tune-ups to boost efficiency, extend HVAC lifespan, and prevent costly repairs."
         />
       </div>
     </section>
