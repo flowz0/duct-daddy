@@ -1,4 +1,4 @@
-import { Review } from "@/app/data/reviews";
+import { Review } from "@/data/reviews";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { BsStarFill } from "react-icons/bs";

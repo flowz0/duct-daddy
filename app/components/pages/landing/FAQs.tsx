@@ -1,6 +1,6 @@
 "use client";
 
-import faqData from "@/app/data/faq";
+import faqData from "@/data/faq";
 import FAQ from "./FAQ";
 
 export default function FAQs() {

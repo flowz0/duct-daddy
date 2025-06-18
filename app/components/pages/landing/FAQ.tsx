@@ -1,4 +1,4 @@
-import { FAQProps } from "@/app/types/faq";
+import { FAQProps } from "@/types/faq";
 import { useState } from "react";
 import { FaPlus } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";

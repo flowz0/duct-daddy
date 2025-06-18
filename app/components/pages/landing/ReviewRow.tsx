@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Review } from "@/app/data/reviews";
+import { Review } from "@/data/reviews";
 import ReviewCard from "./ReviewCard";
 import { useRef } from "react";
 
