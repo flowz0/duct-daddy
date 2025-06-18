@@ -1,4 +1,4 @@
-import { FAQProps } from "@/app/types/faq";
+import { FAQProps } from "@/types/faq";
 
 const faqData: FAQProps[] = [
   {
