@@ -2,13 +2,8 @@ import Stat from "./Stat";
 
 export default function Stats() {
   return (
-    <section className="bg-gradient-to-b from-[#ffffff] to-[#E6E6E6] py-32 px-6 max-w-7xl mx-auto rounded-3xl flex flex-col items-center justify-center">
-      <h2 className="text-3xl font-semibold text-center sm:text-4xl">
-        Why Kansas City
-        <br />
-        Trusts Duct Daddy
-      </h2>
-      <div className="mt-12 flex flex-wrap justify-center flex-col gap-16 md:flex-row">
+    <section className="py-32 px-6 max-w-7xl mx-auto rounded-3xl flex flex-col items-center justify-center">
+      <div className="flex flex-wrap justify-center flex-col gap-16 md:flex-row">
         <Stat
           stat="3,000+"
           title="Vents Cleaned"
