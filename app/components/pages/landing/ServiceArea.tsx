@@ -5,7 +5,7 @@ import ServiceAreaCard from "./ServiceAreaCard";
 
 export default function ServiceArea() {
   return (
-    <section className="pt-28 px-6 max-w-7xl mx-auto lg:pt-48">
+    <section id="service-area" className="pt-28 px-6 max-w-7xl mx-auto lg:pt-48">
       <h2 className="text-3xl font-semibold text-center sm:text-4xl">
         Proudly Serving
         <br />
@@ -19,7 +19,7 @@ export default function ServiceArea() {
           className="h-full w-auto object-cover rounded-md"
           draggable={false}
         />
-        <div className="">
+        <div>
           <h2 className="text-xl font-semibold sm:text-2xl">Service Areas</h2>
           <div className="grid grid-cols-2 gap-x-8 gap-y-6 mt-4 sm:grid-cols-3">
             <ServiceAreaCard location="Oak Grove" />

@@ -6,7 +6,7 @@ import MaintenanceImg from "@/public/services/preventativemaintenance.png";
 
 export default function Services() {
   return (
-    <section className="pt-28 px-6 max-w-7xl mx-auto rounded-3xl flex flex-col items-center justify-center lg:pt-48">
+    <section id="services" className="pt-28 px-6 max-w-7xl mx-auto rounded-3xl flex flex-col items-center justify-center lg:pt-48">
       <h2 className="text-3xl font-semibold text-center sm:text-4xl">
         Services We Offer
       </h2>
