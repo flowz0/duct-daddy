@@ -19,7 +19,7 @@ export default async function DashboardPage() {
           <h2 className="text-2xl font-semibold md:text-3xl">
             All Blogs
           </h2>
-          <Link href="/post-blog" className="bg-[#0080DB] text-[#E6E6E6] font-semibold py-2 px-4 rounded-md hover:bg-[hsl(205,100%,33%)] active:bg-[hsl(205,100%,23%)]">
+          <Link href="/create-blog" className="bg-[#0080DB] text-[#E6E6E6] font-semibold py-2 px-4 rounded-md hover:bg-[hsl(205,100%,33%)] active:bg-[hsl(205,100%,23%)]">
             Create Blog
           </Link>
         </div>
