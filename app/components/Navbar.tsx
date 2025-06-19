@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import AnimatedLink from "./AnimatedLink";
 import BrandLogo from "@/public/Duct-Daddy-03.png";
+import { FaPhoneAlt, FaCalendarAlt } from "react-icons/fa";
 
 export default function Navbar() {
   const Links = [
@@ -66,17 +66,19 @@ export default function Navbar() {
             </Link>
           ) : (
             <>
-              <AnimatedLink href="/" className="hidden text-[hsl(0,0%,50%)] hover:text-[#333333] font-semibold text-base/[32px] tracking-[0.016em] lg:block">
+              <Link href="/" className="hidden text-[hsl(0,0%,50%)] font-semibold transition-colors duration-300 hover:text-[#333333] lg:flex lg:items-center lg:gap-x-2">
+                <FaPhoneAlt className="w-4 h-4" />
                 (816) 708-2608
-              </AnimatedLink>
+              </Link>
               <Link
                 href="/booking"
-                className={`hidden duration-300 transition-colors py-1 px-4 font-semibold text-base/[32px] tracking-[0.016em] rounded-lg md:block
+                className={`hidden duration-300 transition-colors py-1 px-4 font-semibold text-base/[32px] tracking-[0.016em] rounded-lg md:flex md:items-center md:gap-x-3
               ${pathname === "/booking"
                     ? " bg-[hsl(205,100%,53%)] text-[#ffffff] hover:bg-[hsl(205,100%,33%)] active:bg-[hsl(205,100%,23%)]"
                     : "bg-[#0080DB] text-[#ffffff] hover:bg-[hsl(205,100%,33%)] active:bg-[hsl(205,100%,23%)]"
                   } `}
               >
+                <FaCalendarAlt className="w-4 h-4" />
                 Book Online
               </Link>
             </>
