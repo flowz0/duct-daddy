@@ -13,7 +13,7 @@ export default function CTA() {
           </p>
         </header>
         <Link
-          href="/book-online"
+          href="/booking"
           className="bg-[#0080DB] text-[#E6E6E6] mt-8 text-center w-fit py-4 px-6 font-semibold rounded-md hover:bg-[hsl(205,100%,33%)] active:bg-[hsl(205,100%,23%)]"
         >
           Book Online
