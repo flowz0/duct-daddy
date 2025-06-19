@@ -11,8 +11,8 @@ import BrandLogo from "@/public/Duct-Daddy-03.png";
 
 export default function Navbar() {
   const Links = [
-    { name: "Services", href: "/#services" },
     { name: "Blog", href: "/blog" },
+    { name: "Services", href: "/#services" },
     { name: "Service Area", href: "/#service-area" },
     { name: "FAQs", href: "/#faqs" },
   ];
