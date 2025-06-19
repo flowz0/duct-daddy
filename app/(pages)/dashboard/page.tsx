@@ -5,16 +5,16 @@ export default async function DashboardPage() {
   const blogs = await getBlogs();
 
   return (
-    <main className="pt-32 pb-16 px-6 max-w-7xl mx-auto">
+    <main className="pt-32 px-6 max-w-7xl mx-auto lg:pt-40">
       <header>
         <h1 className="text-4xl font-semibold text-center md:text-5xl">
           Blog Dashboard
         </h1>
-        <p className="mt-2 max-w-md text-center mx-auto">
-          Manage your blogs here. Create, view, update, and delete any blog.
+        <p className="mt-4 text-center">
+          Manage your blogs here. Create, view, update, or delete any blog.
         </p>
       </header>
-      <div className="mt-12">
+      <div className="mt-8">
         <div className="flex items-center justify-between">
           <h2 className="text-2xl font-semibold md:text-3xl">
             All Blogs
@@ -23,9 +23,9 @@ export default async function DashboardPage() {
             Create Blog
           </Link>
         </div>
-        <div className="mt-4 w-full overflow-x-auto hidden sm:block">
+        <div className="bg-[#ffffff] mt-2 h-96 w-full overflow-x-auto overflow-y-auto rounded-lg hidden sm:block">
           <table className="w-full table-auto">
-            <thead className="bg-gray-100 text-gray-600">
+            <thead className="text-[#333333]">
               <tr className="text-left text-sm">
                 <th className="py-4 px-6 max-w-[8rem] lg:max-w-[12rem]">Title</th>
                 <th className="py-4 px-6 max-w-[20rem] lg:max-w-[28rem]">Summary</th>
@@ -33,7 +33,7 @@ export default async function DashboardPage() {
                 <th className="py-4 px-6 max-w-[8rem] lg:max-w-[16rem]">Actions</th>
               </tr>
             </thead>
-            <tbody className="text-sm text-gray-700">
+            <tbody className="text-sm text-[hsl(0,0%,30%)]">
               {blogs.map((blog) => (
                 <tr key={blog.id} className="border-t">
                   <td className="py-4 px-6 font-medium truncate max-w-[8rem] lg:max-w-[12rem]">{blog.title}</td>
