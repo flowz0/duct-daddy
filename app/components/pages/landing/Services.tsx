@@ -6,14 +6,11 @@ import MaintenanceImg from "@/public/services/preventativemaintenance.png";
 
 export default function Services() {
   return (
-    <section className="py-32 px-6 max-w-7xl mx-auto rounded-3xl flex flex-col items-center justify-center">
+    <section className="pt-28 px-6 max-w-7xl mx-auto rounded-3xl flex flex-col items-center justify-center lg:pt-48">
       <h2 className="text-3xl font-semibold text-center sm:text-4xl">
         Services We Offer
       </h2>
-      {/* <p className="mt-2 max-w-md text-center">
-        Breathe cleaner air and keep your system running at its best with our professional HVAC services.
-      </p> */}
-      <div className="mt-8 flex flex-wrap justify-center flex-col gap-4 md:flex-row">
+      <div className="mt-8 flex flex-wrap justify-center flex-col gap-8 md:flex-row">
         <Service
           img={AirDuctImg}
           title="Air Duct Cleaning"

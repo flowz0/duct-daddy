@@ -3,7 +3,7 @@ import ReviewRow from "./ReviewRow";
 
 export default function ReviewSection() {
   return (
-    <section className="py-32 mx-auto relative">
+    <section className="pt-28 mx-auto relative lg:pt-48">
       <h2 className="text-3xl font-semibold text-center sm:text-4xl">
         What Our <span className="text-[#0080DB] font-bold">Customers</span> Are Saying
       </h2>

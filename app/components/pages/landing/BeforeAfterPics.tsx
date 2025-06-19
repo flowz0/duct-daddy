@@ -10,7 +10,7 @@ const images = [
 
 export default function BeforeAfterPics() {
   return (
-    <section className="py-32 px-6 max-w-7xl mx-auto">
+    <section className="pt-28 px-6 max-w-7xl mx-auto lg:pt-48">
       <h2 className="text-3xl font-semibold text-center sm:text-4xl">
         See The Duct Daddy Difference
       </h2>
