@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-
 import AnimatedLink from "./AnimatedLink";
 import BrandLogo from "@/public/Duct-Daddy-03.png";
 
@@ -31,21 +30,15 @@ export default function Navbar() {
   return (
     <nav className="bg-[#ffffff] shadow shadow-[hsl(0,0%,80%)] fixed h-20 w-full z-50">
       <div className="flex justify-between items-center h-full max-w-7xl mx-auto px-6">
-        <div className="flex gap-8">
-          <Link
-            href="/"
-            onClick={() => setIsOpen(false)}
-          >
-            {/* {isOpen */}
-            {/* ? "" */}
-            {/* : */} <Image
+        <div className="flex gap-6">
+          <Link href="/" onClick={() => setIsOpen(false)}>
+            <Image
               src={BrandLogo}
               alt="Netflows logo"
               className="h-12 w-auto"
               draggable="false"
               priority={true}
             />
-            {/* } */}
           </Link>
 
           {/* Desktop Links */}
@@ -54,7 +47,7 @@ export default function Navbar() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`transition-colors duration-500
+                  className={`transition-colors duration-300
                     ${pathname === link.href
                       ? "text-[#333333]"
                       : "text-[hsl(0,0%,50%)] hover:text-[#333333]"
@@ -66,9 +59,7 @@ export default function Navbar() {
             ))}
           </ul>
         </div>
-
         <div className="flex items-center gap-4">
-
           {pathname === "/blog" || pathname === "/dashboard" || pathname === "/create-blog" || pathname.startsWith("/edit/") || pathname === "/admin" || pathname === "/register" ? (
             <Link href="/dashboard" className="hidden bg-[#0080DB] text-[#ffffff] duration-300 transition-colors py-1 px-4 font-semibold text-base/[32px] tracking-[0.016em] rounded-lg md:block hover:bg-[hsl(205,100%,33%)] active:bg-[hsl(205,100%,23%)]">
               Dashboard
@@ -91,7 +82,6 @@ export default function Navbar() {
             </>
           )}
         </div>
-
 
         {/* Mobile menu button */}
         <button
