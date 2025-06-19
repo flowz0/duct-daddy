@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FaCalendarAlt } from "react-icons/fa";
 
 export default function CTA() {
   return (
@@ -14,8 +15,9 @@ export default function CTA() {
         </header>
         <Link
           href="/booking"
-          className="bg-[#0080DB] text-[#E6E6E6] mt-8 text-center w-fit py-4 px-6 font-semibold rounded-md hover:bg-[hsl(205,100%,33%)] active:bg-[hsl(205,100%,23%)]"
+          className="bg-[#0080DB] text-[#E6E6E6] mt-8 text-center w-fit py-3 px-6 flex items-center gap-x-3 font-semibold rounded-md hover:bg-[hsl(205,100%,33%)] active:bg-[hsl(205,100%,23%)]"
         >
+          <FaCalendarAlt className="w-5 h-5" />
           Book Online
         </Link>
       </div>
