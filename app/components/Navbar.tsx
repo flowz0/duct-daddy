@@ -70,9 +70,9 @@ export default function Navbar() {
                 (816) 708-2608
               </AnimatedLink>
               <Link
-                href="/book-online"
+                href="/booking"
                 className={`hidden duration-300 transition-colors py-1 px-4 font-semibold text-base/[32px] tracking-[0.016em] rounded-lg md:block
-              ${pathname === "/book-online"
+              ${pathname === "/booking"
                     ? " bg-[hsl(205,100%,53%)] text-[#ffffff] hover:bg-[hsl(205,100%,33%)] active:bg-[hsl(205,100%,23%)]"
                     : "bg-[#0080DB] text-[#ffffff] hover:bg-[hsl(205,100%,33%)] active:bg-[hsl(205,100%,23%)]"
                   } `}
