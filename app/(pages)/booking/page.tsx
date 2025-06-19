@@ -8,6 +8,14 @@ import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { FaCalendarDays } from "react-icons/fa6";
 
+declare global {
+  interface Window {
+    HCPWidget?: {
+      openModal: () => void;
+    };
+  }
+}
+
 export default function BookingPage() {
   const pathname = usePathname();
 
@@ -18,8 +26,8 @@ export default function BookingPage() {
     document.body.appendChild(script);
 
     script.onload = () => {
-      if (pathname === "/booking" && typeof HCPWidget !== "undefined") {
-        HCPWidget.openModal();
+      if (pathname === "/booking" && typeof window.HCPWidget !== "undefined") {
+        window.HCPWidget.openModal();
       }
     };
 
@@ -29,8 +37,8 @@ export default function BookingPage() {
   });
 
   const handleClick = () => {
-    if (typeof HCPWidget !== "undefined") {
-      HCPWidget.openModal();
+    if (typeof window.HCPWidget !== "undefined") {
+      window.HCPWidget.openModal();
     }
   };
 
