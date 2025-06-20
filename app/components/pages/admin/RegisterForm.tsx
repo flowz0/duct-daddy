@@ -50,7 +50,9 @@ export default function RegisterForm() {
         Register account
       </button>
       <p className="mt-2 text-center">
-        Already have an account? <Link href="/admin" className="text-[#0080DB] hover:underline hover:text-[hsl(205,100%,33%)] active:text-[hsl(205,100%,23%)]">Sign in</Link>
+        Already have an account? {" "}
+        <br className="sm:hidden" />
+        <Link href="/admin" className="text-[#0080DB] hover:underline hover:text-[hsl(205,100%,33%)] active:text-[hsl(205,100%,23%)]">Sign in</Link>
       </p>
     </form>
   );

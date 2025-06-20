@@ -94,7 +94,9 @@ export default function LoginForm() {
         Log in
       </button>
       <p className="mt-2 text-center">
-        Don&apos;t have an account? <Link href="/register" className="text-[#0080DB] hover:underline hover:text-[hsl(205,100%,33%)] active:text-[hsl(205,100%,23%)]">Sign up</Link>
+        Don&apos;t have an account? {" "}
+        <br className="sm:hidden" /> 
+        <Link href="/register" className="text-[#0080DB] hover:underline hover:text-[hsl(205,100%,33%)] active:text-[hsl(205,100%,23%)]">Sign up</Link>
       </p>
     </form>
   );
