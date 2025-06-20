@@ -6,7 +6,7 @@ export async function getBlogs(): Promise<BlogProps[]> {
     {
       id: "1",
       author: "Karson Kolle",
-      createdAt: "2025-06-15T12:00:00Z",
+      createdAt: "2025-06-20T18:30:00.000Z",
       readTime: 1,
       title: "My First Blog",
       img: BlogImgPlaceholder,
@@ -19,7 +19,7 @@ export async function getBlogs(): Promise<BlogProps[]> {
     {
       id: "2",
       author: "Karson Kolle",
-      createdAt: "2025-06-15T12:00:00Z",
+      createdAt: "2025-06-19T18:30:00.000Z",
       readTime: 1,
       title: "My Second Blog My Second Blog My Second Blog My Second Blog",
       img: BlogImgPlaceholder,
@@ -31,8 +31,8 @@ export async function getBlogs(): Promise<BlogProps[]> {
     },
     {
       id: "3",
-      author: "Karson Kolle",
-      createdAt: "2025-06-15T12:00:00Z",
+      author: "Renee Kolle",
+      createdAt: "2025-06-18T18:30:00.000Z",
       readTime: 1,
       title: "My Third Blog",
       img: BlogImgPlaceholder,
@@ -45,7 +45,7 @@ export async function getBlogs(): Promise<BlogProps[]> {
     {
       id: "4",
       author: "Karson Kolle",
-      createdAt: "2025-06-15T12:00:00Z",
+      createdAt: "2025-06-17T18:30:00.000Z",
       readTime: 1,
       title: "My Third Blog1",
       img: BlogImgPlaceholder,
@@ -58,7 +58,7 @@ export async function getBlogs(): Promise<BlogProps[]> {
     {
       id: "5",
       author: "Karson Kolle",
-      createdAt: "2025-06-15T12:00:00Z",
+      createdAt: "2025-06-16T18:30:00.000Z",
       readTime: 1,
       title: "My Third Blog2",
       img: BlogImgPlaceholder,
@@ -71,7 +71,7 @@ export async function getBlogs(): Promise<BlogProps[]> {
     {
       id: "6",
       author: "Karson Kolle",
-      createdAt: "2025-06-15T12:00:00Z",
+      createdAt: "2025-06-15T18:30:00.000Z",
       readTime: 1,
       title: "My Third Blog3",
       img: BlogImgPlaceholder,
@@ -84,7 +84,7 @@ export async function getBlogs(): Promise<BlogProps[]> {
     {
       id: "7",
       author: "Karson Kolle",
-      createdAt: "2025-06-15T12:00:00Z",
+      createdAt: "2025-06-14T18:30:00.000Z",
       readTime: 1,
       title: "My Third Blog4",
       img: BlogImgPlaceholder,
