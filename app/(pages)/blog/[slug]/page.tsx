@@ -32,7 +32,7 @@ export default function BlogPage() {
           <p className="mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi maiores cum ratione obcaecati neque nobis quo officiis, est aliquid possimus architecto laudantium ad. Possimus a dolorem temporibus, provident aperiam corrupti.</p>
         </section>
       </article>
-      <div className="pt-28 px-6 max-w-7xl mx-auto lg:pt-48">
+      <div className="py-32 px-6 max-w-7xl mx-auto">
         <h2 className="text-2xl font-semibold md:text-3xl">Other Blogs</h2>
         <LatestBlogs />
       </div>

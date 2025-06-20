@@ -3,8 +3,8 @@ import { FaCalendarAlt } from "react-icons/fa";
 
 export default function CTA() {
   return (
-    <section className="pt-28 px-6 max-w-7xl mx-auto lg:pt-48">
-      <div className="bg-[#ffffff] shadow shadow-[hsl(0,0%,80%)] py-8 px-6 rounded-xl flex flex-col items-center sm:py-16 sm:px-12">
+    <section className="bg-[#ffffff] py-28 px-6">
+      <div className="max-w-7xl mx-auto flex flex-col items-center">
         <header className="flex flex-col">
           <h2 className="text-3xl font-semibold text-center md:text-4xl">
             Breathe without worries

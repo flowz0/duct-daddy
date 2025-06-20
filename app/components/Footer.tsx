@@ -8,7 +8,7 @@ import { FaTiktok } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer>
-      <div className="pt-28 pb-16 px-6 max-w-7xl mx-auto lg:pt-32">
+      <div className="pt-32 pb-16 px-6 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
           <Image
             src={DuctDaddyLogo}

@@ -5,7 +5,7 @@ export default async function DashboardPage() {
   const blogs = await getBlogs();
 
   return (
-    <main className="pt-32 px-6 max-w-7xl mx-auto lg:pt-40">
+    <main className="pt-40 px-6 max-w-7xl mx-auto">
       <header>
         <h1 className="text-4xl font-semibold text-center md:text-5xl">
           Blog Dashboard
