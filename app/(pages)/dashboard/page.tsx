@@ -45,7 +45,7 @@ export default async function DashboardPage() {
                 <tr key={blog.id} className="border-t">
                   <td className="py-4 px-6 font-medium truncate max-w-[8rem] lg:max-w-[12rem]">{blog.title}</td>
                   <td className="py-4 px-6 truncate max-w-[20rem] lg:max-w-[28rem]">{blog.summary}</td>
-                  <td className="py-4 px-6 truncate max-w-[12rem] lg:max-w-[16rem]">{formatDate(blog.createdAt)}</td>
+                  <td className="py-4 px-6 truncate max-w-[12rem] lg:max-w-[16rem]">{blog.createdAt ? formatDate(blog.createdAt) : "Unknown Date"}</td>
                   <td className="py-4 px-6 flex gap-x-1 max-w-[8rem] lg:max-w-[16rem]">
                     <Link href={`/edit/${blog.id}`} className="bg-[hsl(40,70%,80%)] text-[hsl(40,70%,20%)] flex w-fit py-2 px-3 rounded-md hover:bg-[hsl(40,70%,72%)]">
                       <FaEdit className="w-4 h-4" />
