@@ -31,8 +31,8 @@ export default function BlogCard({ blog }: BlogCardProps) {
         <p className="mt-2 line-clamp-3">
           {blog.summary}
         </p>
-        <Link href={`/blog/${blog.id}`} className="bg-[#0080DB] text-[#E6E6E6] mt-6 w-fit py-2 px-4 rounded-md flex items-center gap-x-3 hover:bg-[hsl(205,100%,33%)] active:bg-[hsl(205,100%,23%)]">
-          Read more
+        <Link href={`/blog/${blog.id}`} className="bg-[#0080DB] text-[#E6E6E6] mt-6 w-fit py-2 px-4 rounded-md flex items-center gap-x-4 hover:bg-[hsl(205,100%,33%)] active:bg-[hsl(205,100%,23%)]">
+          Read blog
           <FaLongArrowAltRight className="h-4 w-4" />
         </Link>
       </div>
