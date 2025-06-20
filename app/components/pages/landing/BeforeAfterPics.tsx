@@ -1,11 +1,16 @@
 import Carousel from "./Carousel";
-
-import PlaceholderImg from "@/public/1920x1080.svg";
-import PlaceholderImg2 from "@/public/placeholderimg.jpg";
+import Img1 from "@/public/gallery/1.png";
+import Img2 from "@/public/gallery/2.png";
+import Img3 from "@/public/gallery/3.png";
+import Img4 from "@/public/gallery/4.png";
+import Img5 from "@/public/gallery/5.png";
 
 const images = [
-  PlaceholderImg,
-  PlaceholderImg2
+  Img1,
+  Img2,
+  Img3,
+  Img4,
+  Img5,
 ];
 
 export default function BeforeAfterPics() {
