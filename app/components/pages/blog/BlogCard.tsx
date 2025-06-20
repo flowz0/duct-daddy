@@ -2,24 +2,38 @@ import Image from "next/image";
 
 import PlaceholderImg from "@/public/1920x1080.svg";
 import Link from "next/link";
+import { BlogProps } from "@/types/blog";
+import formatDate from "@/lib/formatDate";
+import { FaLongArrowAltRight } from "react-icons/fa";
 
-export default function BlogCard() {
+interface BlogCardProps {
+  blog: BlogProps;
+}
+
+export default function BlogCard({ blog }: BlogCardProps) {
   return (
     <article className="max-w-full md:max-w-1/2 lg:max-w-1/3">
       <Image
-        src={PlaceholderImg}
-        alt="Blog cover image"
-        className="max-h-96 w-auto object-cover rounded-lg"
+        src={blog.img || PlaceholderImg}
+        alt={`${blog.title} blog image`}
+        width={1920}
+        height={1080}
+        className="w-full h-64 object-cover rounded-lg"
       />
       <div className="mt-2 flex justify-between">
-        <p className="text-sm">Karson Kolle</p>
-        <p className="text-sm">6/11/2025</p>
+        <p className="text-sm">{blog.author}</p>
+        <p className="text-sm">{formatDate(blog.createdAt)}</p>
       </div>
       <div className="mt-2 flex flex-col">
-        <h3 className="text-xl font-semibold line-clamp-2 md:text-2xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui omnis soluta tempore expedita totam modi nam, esse nulla sint id vero pariatur molestiae, quaerat fuga, ipsum minima culpa aut explicabo.</h3>
-        <p className="mt-2 line-clamp-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum esse ducimus reiciendis, nam quaerat sed architecto id molestias inventore sit ipsam labore beatae nihil veritatis deserunt tenetur iusto maxime natus.</p>
-        <Link href="/" className="bg-[#0080DB] text-[#E6E6E6] mt-6 w-fit py-2 px-4 rounded-md hover:bg-[hsl(205,100%,33%)] active:bg-[hsl(205,100%,23%)]">
+        <h3 className="text-xl font-semibold line-clamp-1 md:text-2xl">
+          {blog.title}
+        </h3>
+        <p className="mt-2 line-clamp-3">
+          {blog.summary}
+        </p>
+        <Link href={`/blog/${blog.id}`} className="bg-[#0080DB] text-[#E6E6E6] mt-6 w-fit py-2 px-4 rounded-md flex items-center gap-x-3 hover:bg-[hsl(205,100%,33%)] active:bg-[hsl(205,100%,23%)]">
           Read more
+          <FaLongArrowAltRight className="h-4 w-4" />
         </Link>
       </div>
     </article>
