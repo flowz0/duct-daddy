@@ -32,6 +32,7 @@ export default function ServiceArea() {
               <ServiceAreaCard location="Raymore" />
               <ServiceAreaCard location="Raytown" />
               <ServiceAreaCard location="Pleasant Hill" />
+              <ServiceAreaCard location="Odessa" className="sm:hidden" />
             </div>
             <p className="mt-6">Looking for trusted air duct cleaning or dryer vent services near you? Duct Daddy proudly serves homeowners and businesses across the KC metro. Whether you&apos;re in Missouri or Kansas, we&apos;re just a call away.</p>
           </div>
