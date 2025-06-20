@@ -19,7 +19,11 @@ export default async function BlogPage({ params }: { params: { id: string } }) {
           <h1 className="text-4xl max-w-4xl mx-auto font-semibold text-center sm:text-5xl">
             {blog.title}
           </h1>
-          <BlogFeatures />
+          <BlogFeatures
+            author={blog.author}
+            date={blog.createdAt}
+            readTime={blog.readTime}
+          />
           <Image
             src={blog.img || PlaceholderImg}
             alt={`${blog.title} blog image`}
