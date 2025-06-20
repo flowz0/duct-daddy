@@ -66,7 +66,7 @@ export default function Navbar() {
             </Link>
           ) : (
             <>
-              <Link href="/" className="hidden text-[hsl(0,0%,50%)] font-semibold transition-colors duration-300 hover:text-[#333333] lg:flex lg:items-center lg:gap-x-2">
+              <Link href="tel:+18167082608" className="hidden text-[hsl(0,0%,50%)] font-semibold transition-colors duration-300 hover:text-[#333333] lg:flex lg:items-center lg:gap-x-2">
                 <FaPhoneAlt className="w-4 h-4" />
                 (816) 708-2608
               </Link>
