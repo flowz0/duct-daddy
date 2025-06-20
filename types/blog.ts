@@ -1,12 +1,12 @@
 import { StaticImageData } from "next/image";
 
 export interface BlogProps {
-  id: string;
-  author: string;
-  createdAt: string;
+  id?: string;
+  author?: string;
+  createdAt?: string;
   readTime: number;
   title: string;
-  img: StaticImageData;
+  img: File | StaticImageData | string | null;
   summary: string;
   header: string;
   paragraph: string;
