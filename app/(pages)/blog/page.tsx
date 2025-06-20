@@ -5,7 +5,7 @@ import FAQs from "@/app/components/pages/landing/FAQs";
 export default function Blog() {
   return (
     <>
-      <article className="bg-[#ffffff] pt-40 px-6">
+      <article className="bg-[#ffffff] pt-32 px-6 lg:pt-40">
         <div className="max-w-7xl mx-auto">
           <header>
             <h1 className="text-4xl font-semibold text-center sm:text-5xl">

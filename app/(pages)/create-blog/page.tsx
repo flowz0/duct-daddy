@@ -1,6 +1,6 @@
 export default function CreateBlogPage() {
   return (
-    <main className="pt-40 px-6 max-w-7xl mx-auto">
+    <main className="pt-32 px-6 max-w-7xl mx-auto lg:pt-40">
       <header>
         <h1 className="text-4xl font-semibold text-center sm:text-5xl">
           Post a Blog

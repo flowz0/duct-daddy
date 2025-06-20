@@ -2,7 +2,7 @@ import RegisterForm from "@/app/components/pages/admin/RegisterForm";
 
 export default function RegisterPage() {
   return (
-    <main className="pt-32 pb-16 px-6 max-w-7xl mx-auto">
+    <main className="pt-32 pb-16 px-6 max-w-7xl mx-auto lg:pt-40">
       <div className="bg-[#ffffff] shadow shadow-[hsl(0,0%,80%)] py-12 px-6 rounded-xl md:p-16">
         <div className="flex flex-col gap-8 md:flex-row">
           <header className="w-full md:w-1/2">
