@@ -1,5 +1,6 @@
 import { getBlogs } from "@/lib/blogs";
 import Link from "next/link";
+import { FaPlus, FaEdit, FaTrash } from "react-icons/fa";
 
 export default async function DashboardPage() {
   const blogs = await getBlogs();
@@ -20,7 +21,7 @@ export default async function DashboardPage() {
             All Blogs
           </h2>
           <Link href="/create-blog" className="bg-[#0080DB] text-[#E6E6E6] font-semibold py-2 px-4 rounded-md hover:bg-[hsl(205,100%,33%)] active:bg-[hsl(205,100%,23%)]">
-            Create Blog
+            <FaPlus className="w-4 h-4" />
           </Link>
         </div>
         <div className="bg-[#ffffff] mt-2 h-96 w-full overflow-x-auto overflow-y-auto rounded-lg hidden sm:block">
@@ -39,12 +40,12 @@ export default async function DashboardPage() {
                   <td className="py-4 px-6 font-medium truncate max-w-[8rem] lg:max-w-[12rem]">{blog.title}</td>
                   <td className="py-4 px-6 truncate max-w-[20rem] lg:max-w-[28rem]">{blog.summary}</td>
                   <td className="py-4 px-6 truncate max-w-[12rem] lg:max-w-[16rem]">{blog.createdAt}</td>
-                  <td className="py-4 px-6 space-x-1 max-w-[8rem] lg:max-w-[16rem]">
-                    <Link href={`/edit/${blog.id}`} className="bg-[hsl(40,70%,80%)] text-[hsl(40,70%,20%)] py-2 px-3 rounded-md hover:bg-[hsl(40,70%,72%)]">
-                      Edit
+                  <td className="py-4 px-6 flex gap-x-1 max-w-[8rem] lg:max-w-[16rem]">
+                    <Link href={`/edit/${blog.id}`} className="bg-[hsl(40,70%,80%)] text-[hsl(40,70%,20%)] flex w-fit py-2 px-3 rounded-md hover:bg-[hsl(40,70%,72%)]">
+                      <FaEdit className="w-4 h-4" />
                     </Link>
-                    <Link href={`/delete/${blog.id}`} className="bg-[hsl(0,70%,80%)] text-[hsl(0,70%,20%)] py-2 px-3 rounded-md hover:bg-[hsl(0,70%,72%)]">
-                      Delete
+                    <Link href={`/delete/${blog.id}`} className="bg-[hsl(0,70%,80%)] text-[hsl(0,70%,20%)] flex w-fit py-2 px-3 rounded-md hover:bg-[hsl(0,70%,72%)]">
+                      <FaTrash className="w-4 h-4" />
                     </Link>
                   </td>
                 </tr>
@@ -74,14 +75,14 @@ export default async function DashboardPage() {
                   href={`/edit/${blog.id}`}
                   className="bg-[hsl(205,100%,33%)] text-[#E6E6E6] inline-block py-1 px-2 rounded-lg text-sm font-medium"
                 >
-                  Edit
+                  <FaEdit className="w-4 h-4" />
                 </Link>
 
                 <Link
                   href={`/edit/${blog.id}`}
                   className="bg-[hsl(0,100%,33%)] text-[#E6E6E6] inline-block py-1 px-2 rounded-lg text-sm font-medium"
                 >
-                  Delete
+                  <FaTrash className="w-4 h-4" />
                 </Link>
               </div>
             </div>
