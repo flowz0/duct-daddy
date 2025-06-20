@@ -15,7 +15,7 @@ export default function NotFoundPage() {
           <p className="mt-6 text-center max-w-lg lg:text-start">
             Looks like the page you&apos;re searching for doesn&apos;t exist. But no worries, Duct Daddy Duct Cleaning is still here with expert HVAC and air duct cleaning services.
           </p>
-          <Link href="/" className="bg-[#0080DB] text-[#E6E6E6] mt-12 py-2 px-4 rounded-md hover:bg-[hsl(205,100%,33%)] active:bg-[hsl(205,100%,23%)]">
+          <Link href="/" className="bg-[#0080DB] text-[#E6E6E6] mt-12 py-3 px-6 font-semibold rounded-md hover:bg-[hsl(205,100%,33%)] active:bg-[hsl(205,100%,23%)]">
             Back to Fresh Air
           </Link>
         </header>
