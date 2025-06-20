@@ -1,9 +1,15 @@
 import { getBlogs } from "@/lib/blogs";
+import formatDate from "@/lib/formatDate";
+import { BlogProps } from "@/types/blog";
 import Link from "next/link";
 import { FaPlus, FaEdit, FaTrash } from "react-icons/fa";
 
 export default async function DashboardPage() {
   const blogs = await getBlogs();
+
+  const sortedBlogs: BlogProps[] = blogs.sort(
+    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+  );
 
   return (
     <main className="pt-32 px-6 max-w-7xl mx-auto lg:pt-40">
@@ -35,11 +41,11 @@ export default async function DashboardPage() {
               </tr>
             </thead>
             <tbody className="text-sm text-[hsl(0,0%,30%)]">
-              {blogs.map((blog) => (
+              {sortedBlogs.map((blog) => (
                 <tr key={blog.id} className="border-t">
                   <td className="py-4 px-6 font-medium truncate max-w-[8rem] lg:max-w-[12rem]">{blog.title}</td>
                   <td className="py-4 px-6 truncate max-w-[20rem] lg:max-w-[28rem]">{blog.summary}</td>
-                  <td className="py-4 px-6 truncate max-w-[12rem] lg:max-w-[16rem]">{blog.createdAt}</td>
+                  <td className="py-4 px-6 truncate max-w-[12rem] lg:max-w-[16rem]">{formatDate(blog.createdAt)}</td>
                   <td className="py-4 px-6 flex gap-x-1 max-w-[8rem] lg:max-w-[16rem]">
                     <Link href={`/edit/${blog.id}`} className="bg-[hsl(40,70%,80%)] text-[hsl(40,70%,20%)] flex w-fit py-2 px-3 rounded-md hover:bg-[hsl(40,70%,72%)]">
                       <FaEdit className="w-4 h-4" />
