@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
-
+import { useEffect, useRef, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
 interface CarouselProps {
@@ -14,40 +13,58 @@ interface CarouselProps {
 export default function Carousel({
   images,
   altTexts = [],
-  // autoPlayInterval = 5000, // 5 seconds
+  autoPlayInterval = 5000, // 5 seconds
 }: CarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   const prevImage = () => {
-    // if (currentIndex !== 0) {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
-    // }
   };
 
   const nextImage = () => {
-    // if (currentIndex !== images.length - 1) {
     setCurrentIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
-    // }
   };
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     if (currentIndex !== images.length - 1) {
-  //       setCurrentIndex((prevIndex) =>
-  //         prevIndex === images.length - 1 ? 0 : prevIndex + 1
-  //       );
-  //     }
-  //   }, autoPlayInterval);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        threshold: 0.25,
+      }
+    );
 
-  //   return () => clearInterval(interval);
-  // }, [currentIndex, images.length, autoPlayInterval]);
+    const element = ref.current;
+    if (element) observer.observe(element);
+
+    return () => {
+      if (element) observer.unobserve(element);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    const interval = setInterval(() => {
+      if (currentIndex !== images.length - 1) {
+        setCurrentIndex((prevIndex) =>
+          prevIndex === images.length - 1 ? 0 : prevIndex + 1
+        );
+      }
+    }, autoPlayInterval);
+
+    return () => clearInterval(interval);
+  }, [isVisible, currentIndex, autoPlayInterval, images.length]);
 
   return (
-    <div className="relative w-full aspect-[16/9] rounded-md shadow overflow-hidden mt-8">
+    <div ref={ref} className="relative w-full aspect-[16/9] rounded-md shadow overflow-hidden mt-8">
       <Image
         src={images[currentIndex]}
         alt={altTexts[currentIndex] || `Image ${currentIndex + 1}`}
