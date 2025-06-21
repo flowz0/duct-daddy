@@ -5,13 +5,10 @@ import { BlogProps } from "@/types/blog";
 export default async function LatestBlogs() {
   const blogs = await getBlogs();
 
-  // Sort blogs by createdAt in descending order
-  const sortedBlogs: BlogProps[] = blogs.sort(
-    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-  );
-
-  // Take only the top 3 most recent blogs
-  const latestBlogs = sortedBlogs.slice(0, 3);
+  const latestBlogs = blogs
+    .filter((b): b is BlogProps => !!b.createdAt)
+    .sort((a,b) => new Date(b.createdAt!).getTime() - new Date(a.createdAt!).getTime())
+    .slice(0, 3);
 
   return (
     <section className="mt-2">
