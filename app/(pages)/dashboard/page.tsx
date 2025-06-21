@@ -1,5 +1,6 @@
 import { getBlogs } from "@/lib/blogs";
 import formatDate from "@/lib/formatDate";
+import slugify from "@/lib/slugify";
 import { BlogProps } from "@/types/blog";
 import Link from "next/link";
 import { FaPlus, FaEdit, FaTrash } from "react-icons/fa";
@@ -7,9 +8,9 @@ import { FaPlus, FaEdit, FaTrash } from "react-icons/fa";
 export default async function DashboardPage() {
   const blogs = await getBlogs();
 
-  const sortedBlogs: BlogProps[] = blogs.sort(
-    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-  );
+  const sortedBlogs: BlogProps[] = blogs
+    .filter((b): b is BlogProps => !!b.createdAt)
+    .sort((a, b) => new Date(b.createdAt!).getTime() - new Date(a.createdAt!).getTime());
 
   return (
     <main className="pt-32 px-6 max-w-7xl mx-auto lg:pt-40">
@@ -28,6 +29,7 @@ export default async function DashboardPage() {
           </h2>
           <Link href="/create-blog" className="bg-[#0080DB] text-[#E6E6E6] font-semibold py-2 px-4 rounded-md hover:bg-[hsl(205,100%,33%)] active:bg-[hsl(205,100%,23%)]">
             <FaPlus className="w-4 h-4" />
+            <span className="sr-only">Create new blog</span>
           </Link>
         </div>
         <div className="bg-[#ffffff] mt-2 h-96 w-full overflow-x-auto overflow-y-auto rounded-lg hidden sm:block">
@@ -41,22 +43,35 @@ export default async function DashboardPage() {
               </tr>
             </thead>
             <tbody className="text-sm text-[hsl(0,0%,30%)]">
-              {sortedBlogs.map((blog) => (
-                <tr key={blog.id} className="border-t">
-                  <td className="py-4 px-6 font-medium truncate max-w-[8rem] lg:max-w-[12rem]">{blog.title}</td>
-                  <td className="py-4 px-6 truncate max-w-[20rem] lg:max-w-[28rem]">{blog.summary}</td>
-                  <td className="py-4 px-6 truncate max-w-[12rem] lg:max-w-[16rem]">{blog.createdAt ? formatDate(blog.createdAt) : "Unknown Date"}</td>
-                  <td className="py-4 px-6 flex gap-x-1 max-w-[8rem] lg:max-w-[16rem]">
-                    <Link href={`/edit/${blog.id}`} className="bg-[hsl(40,70%,80%)] text-[hsl(40,70%,20%)] flex w-fit py-2 px-3 rounded-md hover:bg-[hsl(40,70%,72%)]">
-                      <FaEdit className="w-4 h-4" />
-                    </Link>
-                    <Link href={`/delete/${blog.id}`} className="bg-[hsl(0,70%,80%)] text-[hsl(0,70%,20%)] flex w-fit py-2 px-3 rounded-md hover:bg-[hsl(0,70%,72%)]">
-                      <FaTrash className="w-4 h-4" />
-                    </Link>
-                  </td>
-                </tr>
-              ))}
-              {blogs.length === 0 && (
+              {sortedBlogs.length > 0 ? (
+                sortedBlogs.map((blog) => {
+                  const slug = slugify(blog.title);
+                  const slugAndId = `${slug}-${blog.id}`;
+                  return (
+                    <tr key={blog.id} className="border-t">
+                      <td className="py-4 px-6 font-medium truncate max-w-[8rem] lg:max-w-[12rem]">{blog.title}</td>
+                      <td className="py-4 px-6 truncate max-w-[20rem] lg:max-w-[28rem]">{blog.summary}</td>
+                      <td className="py-4 px-6 truncate max-w-[12rem] lg:max-w-[16rem]">{formatDate(blog.createdAt!)}</td>
+                      <td className="py-4 px-6 flex gap-x-1 max-w-[8rem] lg:max-w-[16rem]">
+                        <Link
+                          href={`/edit/${slugAndId}`}
+                          aria-label={`Edit ${blog.title}`}
+                          className="bg-[hsl(40,70%,80%)] text-[hsl(40,70%,20%)] flex w-fit py-2 px-3 rounded-md hover:bg-[hsl(40,70%,72%)]"
+                        >
+                          <FaEdit className="w-4 h-4" />
+                        </Link>
+                        <Link
+                          href={`/delete/${slugAndId}`}
+                          aria-label={`Delete ${blog.title}`}
+                          className="bg-[hsl(0,70%,80%)] text-[hsl(0,70%,20%)] flex w-fit py-2 px-3 rounded-md hover:bg-[hsl(0,70%,72%)]"
+                        >
+                          <FaTrash className="w-4 h-4" />
+                        </Link>
+                      </td>
+                    </tr>
+                  );
+                })
+              ) : (
                 <tr>
                   <td colSpan={4} className="text-center pt-4">
                     No blogs found.
@@ -69,31 +84,38 @@ export default async function DashboardPage() {
 
         {/* Mobile Cards */}
         <div className="sm:hidden mt-4 flex flex-col gap-y-6">
-          {blogs.map((blog) => (
-            <div
-              key={blog.id}
-            >
-              <h2 className="text-lg font-semibold line-clamp-2 md:text-xl">{blog.title}</h2>
-              <p className="mt-1 text-sm">{blog.createdAt}</p>
-              <p className="text-gray-700 mt-2 text-sm line-clamp-3">{blog.summary}</p>
-              <div className="mt-2 space-x-2">
-                <Link
-                  href={`/edit/${blog.id}`}
-                  className="bg-[hsl(205,100%,33%)] text-[#E6E6E6] inline-block py-1 px-2 rounded-lg text-sm font-medium"
+          {sortedBlogs.length > 0 ? (
+            sortedBlogs.map((blog) => {
+              const slug = slugify(blog.title);
+              const slugAndId = `${slug}-${blog.id}`;
+              return (
+                <div
+                  key={blog.id}
                 >
-                  <FaEdit className="w-4 h-4" />
-                </Link>
+                  <h2 className="text-lg font-semibold line-clamp-2 md:text-xl">{blog.title}</h2>
+                  <p className="mt-1 text-sm">{blog.createdAt}</p>
+                  <p className="text-gray-700 mt-2 text-sm line-clamp-3">{blog.summary}</p>
+                  <div className="mt-2 space-x-2">
+                    <Link
+                      href={`/edit/${slugAndId}`}
+                      aria-label={`Edit ${blog.title}`}
+                      className="bg-[hsl(205,100%,33%)] text-[#E6E6E6] inline-block py-1 px-2 rounded-lg text-sm font-medium"
+                    >
+                      <FaEdit className="w-4 h-4" />
+                    </Link>
 
-                <Link
-                  href={`/edit/${blog.id}`}
-                  className="bg-[hsl(0,100%,33%)] text-[#E6E6E6] inline-block py-1 px-2 rounded-lg text-sm font-medium"
-                >
-                  <FaTrash className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-          ))}
-          {blogs.length === 0 && (
+                    <Link
+                      href={`/delete/${slugAndId}`}
+                      aria-label={`Delete ${blog.title}`}
+                      className="bg-[hsl(0,100%,33%)] text-[#E6E6E6] inline-block py-1 px-2 rounded-lg text-sm font-medium"
+                    >
+                      <FaTrash className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </div>
+              );
+            })
+          ) : (
             <p className="mt-4">No blogs found.</p>
           )}
         </div>
