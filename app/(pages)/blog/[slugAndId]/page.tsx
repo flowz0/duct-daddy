@@ -6,9 +6,12 @@ import LatestBlogs from "@/app/components/pages/blog/LatestBlogs";
 import { getBlogs } from "@/lib/blogs";
 import { notFound } from "next/navigation";
 
-export default async function BlogPage({ params }: { params: { id: string } }) {
+export default async function BlogPage({ params }: { params: Promise<{ slugAndId: string }> }) {
+  const { slugAndId } = await params;
+  const id = slugAndId.split("-").pop();
+
   const blogs = await getBlogs();
-  const blog = blogs.find((b) => b.id === params.id);
+  const blog = blogs.find((b) => b.id === id);
 
   if (!blog) return notFound();
 
@@ -20,8 +23,8 @@ export default async function BlogPage({ params }: { params: { id: string } }) {
             {blog.title}
           </h1>
           <BlogFeatures
-            author={blog.author}
-            date={blog.createdAt}
+            author={blog.author!}
+            date={blog.createdAt!}
             readTime={blog.readTime}
           />
           <Image
