@@ -1,4 +1,4 @@
-import CreateBlogForm from "@/app/components/pages/dashboard/CreateBlogForm";
+import PostBlogForm from "@/app/components/pages/dashboard/PostBlogForm";
 
 export default function CreateBlogPage() {
   return (
@@ -11,7 +11,7 @@ export default function CreateBlogPage() {
           Create a blog post by filling out the following fields.
         </p>
       </header>
-      <CreateBlogForm />
+      <PostBlogForm />
     </main>
   );
 }
