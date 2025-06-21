@@ -4,7 +4,7 @@ import { FaUser, FaCalendarDays, FaClock } from "react-icons/fa6";
 interface BlogFeaturesProps {
   author: string;
   date: string;
-  readTime: number;
+  readTime: string;
 }
 
 export default function BlogFeatures({author, date, readTime}: BlogFeaturesProps) {
