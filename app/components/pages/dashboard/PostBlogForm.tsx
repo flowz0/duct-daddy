@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 export default function PostBlogForm() {
   const [blogData, setBlogData] = useState<BlogProps>({
-    readTime: 0,
+    readTime: "0",
     title: "",
     summary: "",
     img: null,

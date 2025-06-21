@@ -4,7 +4,7 @@ export interface BlogProps {
   id?: string;
   author?: string;
   createdAt?: string;
-  readTime: number;
+  readTime: string;
   title: string;
   img: string | StaticImageData | null | File;
   summary: string;
