@@ -6,7 +6,7 @@ export interface BlogProps {
   createdAt?: string;
   readTime: number;
   title: string;
-  img: File | StaticImageData | string | null;
+  img: string | StaticImageData | null | File;
   summary: string;
   header: string;
   paragraph: string;
