@@ -5,8 +5,8 @@ export interface BlogProps {
   author?: string;
   createdAt?: string;
   readTime: string;
+  img?: string | StaticImageData | null | File | undefined;
   title: string;
-  img: string | StaticImageData | null | File;
   summary: string;
   header: string;
   paragraph: string;
