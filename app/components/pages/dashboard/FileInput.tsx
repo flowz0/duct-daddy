@@ -55,7 +55,7 @@ export default function FileInput({
           alt="Preview"
           height={1920}
           width={1080}
-          className="mt-3 sm:pl-1.5 sm:max-w-[200px] object-cover rounded-md ring-4 ring-offset-2 ring-[#0080DB]"
+          className="mt-3 object-cover rounded-md ring-4 ring-offset-2 ring-[#0080DB] sm:max-w-[200px]"
         />
       )}
       {error && <p className="text-sm text-red-600 mt-2">{error}</p>}
