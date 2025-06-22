@@ -1,12 +1,15 @@
 "use client";
 
 import { BlogProps } from "@/types/blog";
-import Image from "next/image";
 import { useEffect, useState } from "react";
+import FormInput from "./FormInput";
+import TextArea from "./TextArea";
+import FileInput from "./FileInput";
+import { StaticImageData } from "next/image";
 
 export default function PostBlogForm() {
   const [blogData, setBlogData] = useState<BlogProps>({
-    readTime: "0",
+    readTime: "",
     title: "",
     summary: "",
     img: null,
@@ -16,116 +19,197 @@ export default function PostBlogForm() {
     paragraph2: "",
   });
   const [previewUrl, setPreviewURL] = useState<string | null>(null);
+  const [errors, setErrors] = useState<Partial<BlogProps>>({});
 
   useEffect(() => {
     if (blogData.img instanceof File) {
       const objectUrl = URL.createObjectURL(blogData.img);
       setPreviewURL(objectUrl);
-
       return () => URL.revokeObjectURL(objectUrl);
     }
   }, [blogData.img]);
 
+  type FieldValue = string | File | StaticImageData | null | undefined;
+
+  const validateField = (
+    name: keyof BlogProps,
+    value: FieldValue
+  ): string => {
+    if (name === "img") {
+      if (!value || !(value instanceof File)) {
+        return "A valid image file is required.";
+      }
+      return "";
+    }
+    if (typeof value !== "string") return "";
+    if (name === "readTime" && !value.trim()) {
+      return "Read time is required.";
+    } else if (name === "readTime" && value.length < 0) {
+      return "Read time must be more than 0 minutes.";
+    }
+    if (name === "title" && !value.trim()) {
+      return "Title is required.";
+    } else if (name === "title" && value.length < 5) {
+      return "Title must be more than 5 characters.";
+    }
+    if (name === "summary" && !value.trim()) {
+      return "Summary is required.";
+    } else if (name === "summary" && value.length < 10) {
+      return "Summary must be more than 10 characters";
+    }
+    if (name === "header" && !value.trim()) {
+      return "Header is required.";
+    } else if (name === "header" && value.length < 10) {
+      return "Header must be more than 10 characters";
+    }
+    if (name === "paragraph" && !value.trim()) {
+      return "Paragraph is required.";
+    } else if (name === "paragraph" && value.length < 10) {
+      return "Paragraph must be more than 10 characters";
+    }
+    if (name === "header2" && !value.trim()) {
+      return "Second header is required.";
+    } else if (name === "header2" && value.length < 10) {
+      return "Second header must be more than 10 characters";
+    }
+    if (name === "paragraph2" && !value.trim()) {
+      return "Second paragraph is required.";
+    } else if (name === "paragraph2" && value.length < 10) {
+      return "Second paragraph must be more than 10 characters";
+    }
+    return "";
+  };
+
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name } = e.target;
+    const value = name === "img" ? blogData.img : e.target.value;
+    const error = validateField(name as keyof BlogProps, value);
+    setErrors((prev) => ({ ...prev, [name]: error }));
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setBlogData((prev) => ({ ...prev, [name]: value }))
+    const error = validateField(name as keyof BlogProps, value);
+    setErrors((prev) => ({
+      ...prev,
+      [name]: error || undefined,
+    }));
+  };
+
+  const validateForm = () => {
+    const newErrors: Partial<BlogProps> = {};
+    (Object.keys(blogData) as (keyof BlogProps)[]).forEach((key) => {
+      const value = blogData[key];
+      const error = validateField(key, value);
+      if (error) newErrors[key] = error;
+    });
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (validateForm()) {
+      console.log("Blog submitted:", blogData);
+      alert("Blog created successfully!");
+    }
+  };
+
   return (
-    <form className="mt-8 max-w-2xl mx-auto flex flex-col gap-4">
-      <div className="flex flex-col">
-        <label htmlFor="readTime">Read Time</label>
-        <input
-          type="number"
-          name="readTime"
-          id="readTime"
-          placeholder="0-60 (minutes)"
-          className="mt-1 py-3 px-4 rounded-md"
-        />
-      </div>
-      <div className="flex flex-col">
-        <label htmlFor="title">Title</label>
-        <input
-          type="text"
-          name="title"
-          id="title"
-          placeholder="Blog title"
-          className="mt-1 py-3 px-4 rounded-md"
-        />
-      </div>
-      <div className="flex flex-col">
-        <label htmlFor="summary">Blog Summary</label>
-        <input
-          type="text"
-          name="summary"
-          id="summary"
-          placeholder="Summary of the blog post"
-          className="mt-1 py-3 px-4 rounded-md"
-        />
-      </div>
-      <div className="flex flex-col">
-        <label htmlFor="thumbnail">Blog Thumbnail</label>
-        <input
-          type="file"
-          name="thumbnail"
-          id="thumbnail*"
-          accept="image/"
-          onChange={(e) => {
-            const file = e.target.files?.[0] || null;
-            setBlogData((prev) => ({ ...prev, img: file }));
-          }}
-          className="mt-1 py-3 px-4 rounded-md"
-        />
-        {previewUrl && (
-          <Image
-            src={previewUrl}
-            alt="Preview"
-            height={1920}
-            width={1080}
-            className="w-32 h-32 object-cover"
-          />
-        )}
-      </div>
-      <div className="flex flex-col">
-        <label htmlFor="header1">First Header</label>
-        <input
-          type="text"
-          name="header1"
-          id="header1"
-          placeholder="Header one for the blog post"
-          className="mt-1 py-3 px-4 rounded-md"
-        />
-      </div>
-      <div className="flex flex-col">
-        <label htmlFor="paragraph1">First Paragraph</label>
-        <textarea
-          rows={3}
-          name="paragraph1"
-          id="paragraph1"
-          placeholder="Paragraph one for the blog post"
-          className="mt-1 py-3 px-4 rounded-md resize-none"
-        />
-      </div>
-      <div className="flex flex-col">
-        <label htmlFor="header2">Second Header</label>
-        <input
-          type="text"
-          name="header2"
-          id="header2"
-          placeholder="Header two for the blog post"
-          className="mt-1 py-3 px-4 rounded-md"
-        />
-      </div>
-      <div className="flex flex-col">
-        <label htmlFor="paragraph2">Second Paragraph</label>
-        <textarea
-          rows={3}
-          name="paragraph2"
-          id="paragraph2"
-          placeholder="Paragraph two for the blog post"
-          className="mt-1 py-3 px-4 rounded-md resize-none"
-        />
-      </div>
-      <button
-        type="button"
-        className="bg-[#0080DB] text-[#E6E6E6] mt-4 py-3 px-4 w-full font-semibold rounded-md hover:bg-[hsl(205,100%,33%)] active:bg-[hsl(205,100%,23%)]"
-      >
-        Post Blog
+    <form onSubmit={handleSubmit} className="mt-8 max-w-2xl mx-auto flex flex-col gap-4" noValidate>
+      <FormInput
+        name="title"
+        label="Blog title"
+        type="text"
+        placeholder="Title for blog"
+        value={blogData.title}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        error={errors.title}
+        required
+      />
+      <TextArea
+        name="summary"
+        label="Blog summary"
+        type="text"
+        placeholder="Summary for blog"
+        value={blogData.summary}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        error={errors.summary}
+        required
+      />
+      <FormInput
+        name="readTime"
+        label="Read time"
+        type="number"
+        placeholder="1 - 59 (minutes)"
+        value={blogData.readTime}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        error={errors.readTime}
+        required
+      />
+      <FileInput
+        name="img"
+        label="Blog image"
+        previewUrl={previewUrl}
+        error={errors.img as string}
+        onBlur={handleBlur}
+        onChange={(file) => {
+          setBlogData((prev) => ({ ...prev, img: file }));
+          const error = validateField("img", file);
+          setErrors((prev) => ({ ...prev, img: error || undefined }));
+        }}
+        required
+      />
+      <FormInput
+        name="header"
+        label="First header"
+        type="text"
+        placeholder="Header for blog"
+        value={blogData.header}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        error={errors.header}
+        required
+      />
+      <TextArea
+        name="paragraph"
+        label="First paragraph"
+        type="text"
+        placeholder="Paragraph for blog"
+        value={blogData.paragraph}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        error={errors.paragraph}
+        required
+      />
+      <FormInput
+        name="header2"
+        label="Second header"
+        type="text"
+        placeholder="Second header for blog"
+        value={blogData.header2}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        error={errors.header2}
+        required
+      />
+      <TextArea
+        name="paragraph2"
+        label="Second Paragraph"
+        type="text"
+        placeholder="Second paragraph for blog"
+        value={blogData.paragraph2}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        error={errors.paragraph2}
+        required
+      />
+      <button type="submit" className="bg-[#0080DB] text-[#E6E6E6] mt-4 py-3 px-4 w-full font-semibold rounded-md hover:bg-[hsl(205,100%,33%)] active:bg-[hsl(205,100%,23%)]">
+        Post blog
       </button>
     </form>
   );
