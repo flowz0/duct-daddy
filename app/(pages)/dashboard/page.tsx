@@ -1,3 +1,4 @@
+import Header from "@/app/components/Header";
 import DeleteBlogBtn from "@/app/components/pages/dashboard/DeleteBlogBtn";
 import EditBlogBtn from "@/app/components/pages/dashboard/EditBlogBtn";
 import { getBlogs } from "@/lib/blogs";
@@ -14,16 +15,11 @@ export default async function DashboardPage() {
     .sort((a, b) => new Date(b.createdAt!).getTime() - new Date(a.createdAt!).getTime());
 
   return (
-    <main className="pt-32 pb-16 px-6 max-w-7xl mx-auto lg:pt-40">
-      <header>
-        <h1 className="text-4xl font-semibold text-center md:text-5xl">
-          Blog Dashboard
-        </h1>
-        <p className="mt-4 text-center">
-          Manage your blogs here. Create, view, update, or delete any blog.
-        </p>
-      </header>
-      <div className="mt-8">
+    <main className="mb-16">
+      <Header subtitle="Manage your blogs here. Create, view, update, or delete any blog.">
+        Blog Dashboard
+      </Header>
+      <div className="bg-[#ffffff] shadow shadow-[hsl(0,0%,80%)] mx-6 px-6 py-8 max-w-7xl lg:mx-auto rounded-lg lg:px-20 lg:py-20">
         <div className="flex items-center justify-between">
           <h2 className="text-2xl font-semibold md:text-3xl">
             All Blogs
@@ -33,14 +29,14 @@ export default async function DashboardPage() {
             <span className="sr-only">Create new blog</span>
           </Link>
         </div>
-        <div className="bg-[#ffffff] mt-2 h-96 w-full overflow-x-auto overflow-y-auto rounded-lg hidden sm:block">
+        <div className="bg-[#ffffff] h-[412px] mt-6 overflow-x-auto overflow-y-scroll hidden sm:block">
           <table className="w-full table-auto">
             <thead className="text-[#333333]">
               <tr className="text-left text-sm">
-                <th className="py-4 px-6 max-w-[8rem] lg:max-w-[12rem]">Title</th>
-                <th className="py-4 px-6 max-w-[20rem] lg:max-w-[28rem]">Summary</th>
-                <th className="py-4 px-6 max-w-[12rem] lg:max-w-[16rem]">Date Created</th>
-                <th className="py-4 px-6 max-w-[8rem] lg:max-w-[16rem]">Actions</th>
+                <th className="pb-4 max-w-[8rem] lg:max-w-[12rem]">Title</th>
+                <th className="pb-4 max-w-[20rem] lg:max-w-[28rem]">Summary</th>
+                <th className="pb-4 max-w-[12rem] lg:max-w-[16rem]">Date Created</th>
+                <th className="pb-4 max-w-[8rem] lg:max-w-[16rem]">Actions</th>
               </tr>
             </thead>
             <tbody className="text-sm text-[hsl(0,0%,30%)]">
@@ -51,10 +47,10 @@ export default async function DashboardPage() {
 
                   return (
                     <tr key={blog.id} className="border-t">
-                      <td className="py-4 px-6 font-medium truncate max-w-[8rem] lg:max-w-[12rem]">{blog.title}</td>
-                      <td className="py-4 px-6 truncate max-w-[20rem] lg:max-w-[28rem]">{blog.summary}</td>
-                      <td className="py-4 px-6 truncate max-w-[12rem] lg:max-w-[16rem]">{formatDate(blog.createdAt!)}</td>
-                      <td className="py-4 px-6 flex items-center gap-2 max-w-[8rem] lg:max-w-[16rem]">
+                      <td className="py-4 pr-4 font-medium truncate max-w-[8rem] lg:pr-4 lg:max-w-[10rem]">{blog.title}</td>
+                      <td className="py-4 pr-2 truncate max-w-[20rem] lg:max-w-[28rem] lg:pr-4">{blog.summary}</td>
+                      <td className="py-4 pr-2 truncate max-w-[12rem] lg:max-w-[16rem] lg:pr-4">{formatDate(blog.createdAt!)}</td>
+                      <td className="py-4 pr-2 flex items-center gap-2 max-w-[8rem] lg:max-w-[16rem] lg:pr-4">
                         <EditBlogBtn
                           editHref={slugAndId}
                           ariaLabel={blog.title}
@@ -79,7 +75,7 @@ export default async function DashboardPage() {
         </div>
 
         {/* Mobile Cards */}
-        <div className="sm:hidden mt-4 flex flex-col gap-y-6">
+        <div className="mt-4 h-[540px] pr-4 flex flex-col gap-y-6 overflow-y-auto sm:hidden lg:pr-0">
           {sortedBlogs.length > 0 ? (
             sortedBlogs.map((blog) => {
               const slug = slugify(blog.title);
@@ -90,7 +86,9 @@ export default async function DashboardPage() {
                   key={blog.id}
                 >
                   <div className="flex justify-between items-center gap-x-4 sm:gap-x-8">
-                    <h2 className="text-lg font-semibold line-clamp-2 md:text-xl">{blog.title}</h2>
+                    <h2 className="text-lg font-semibold line-clamp-2 md:text-xl">
+                      {blog.title}
+                    </h2>
                     <div className="mt-2 flex items-center gap-2">
                       <EditBlogBtn
                         editHref={slugAndId}
@@ -102,7 +100,7 @@ export default async function DashboardPage() {
                       />
                     </div>
                   </div>
-                  <p className="mt-1 text-sm">{blog.createdAt}</p>
+                  <p className="mt-1 text-sm">{formatDate(blog.createdAt!)}</p>
                   <p className="text-gray-700 mt-2 text-sm line-clamp-3">{blog.summary}</p>
                 </div>
               );
@@ -111,6 +109,7 @@ export default async function DashboardPage() {
             <p className="mt-4">No blogs found.</p>
           )}
         </div>
+        <p className="mt-6 text-end text-sm">Total blogs: {blogs.length}</p>
       </div>
     </main>
   );
