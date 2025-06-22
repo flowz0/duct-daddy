@@ -1,19 +1,20 @@
+import DeleteBlogBtn from "@/app/components/pages/dashboard/DeleteBlogBtn";
+import EditBlogBtn from "@/app/components/pages/dashboard/EditBlogBtn";
 import { getBlogs } from "@/lib/blogs";
 import formatDate from "@/lib/formatDate";
 import slugify from "@/lib/slugify";
 import { BlogProps } from "@/types/blog";
 import Link from "next/link";
-import { FaPlus, FaEdit, FaTrash } from "react-icons/fa";
+import { FaFileCirclePlus } from "react-icons/fa6";
 
 export default async function DashboardPage() {
   const blogs = await getBlogs();
-
   const sortedBlogs: BlogProps[] = blogs
     .filter((b): b is BlogProps => !!b.createdAt)
     .sort((a, b) => new Date(b.createdAt!).getTime() - new Date(a.createdAt!).getTime());
 
   return (
-    <main className="pt-32 px-6 max-w-7xl mx-auto lg:pt-40">
+    <main className="pt-32 pb-16 px-6 max-w-7xl mx-auto lg:pt-40">
       <header>
         <h1 className="text-4xl font-semibold text-center md:text-5xl">
           Blog Dashboard
@@ -27,8 +28,8 @@ export default async function DashboardPage() {
           <h2 className="text-2xl font-semibold md:text-3xl">
             All Blogs
           </h2>
-          <Link href="/create-blog" className="bg-[#0080DB] text-[#E6E6E6] font-semibold py-2 px-4 rounded-md hover:bg-[hsl(205,100%,33%)] active:bg-[hsl(205,100%,23%)]">
-            <FaPlus className="w-4 h-4" />
+          <Link href="/create-blog" className="text-[#0080DB] hover:text-[hsl(205,100%,33%)] active:text-[hsl(205,100%,23%)]">
+            <FaFileCirclePlus className="w-9 h-9" />
             <span className="sr-only">Create new blog</span>
           </Link>
         </div>
@@ -47,26 +48,21 @@ export default async function DashboardPage() {
                 sortedBlogs.map((blog) => {
                   const slug = slugify(blog.title);
                   const slugAndId = `${slug}-${blog.id}`;
+
                   return (
                     <tr key={blog.id} className="border-t">
                       <td className="py-4 px-6 font-medium truncate max-w-[8rem] lg:max-w-[12rem]">{blog.title}</td>
                       <td className="py-4 px-6 truncate max-w-[20rem] lg:max-w-[28rem]">{blog.summary}</td>
                       <td className="py-4 px-6 truncate max-w-[12rem] lg:max-w-[16rem]">{formatDate(blog.createdAt!)}</td>
-                      <td className="py-4 px-6 flex gap-x-1 max-w-[8rem] lg:max-w-[16rem]">
-                        <Link
-                          href={`/edit/${slugAndId}`}
-                          aria-label={`Edit ${blog.title}`}
-                          className="bg-[hsl(40,70%,80%)] text-[hsl(40,70%,20%)] flex w-fit py-2 px-3 rounded-md hover:bg-[hsl(40,70%,72%)]"
-                        >
-                          <FaEdit className="w-4 h-4" />
-                        </Link>
-                        <Link
-                          href={`/delete/${slugAndId}`}
-                          aria-label={`Delete ${blog.title}`}
-                          className="bg-[hsl(0,70%,80%)] text-[hsl(0,70%,20%)] flex w-fit py-2 px-3 rounded-md hover:bg-[hsl(0,70%,72%)]"
-                        >
-                          <FaTrash className="w-4 h-4" />
-                        </Link>
+                      <td className="py-4 px-6 flex items-center gap-2 max-w-[8rem] lg:max-w-[16rem]">
+                        <EditBlogBtn
+                          editHref={slugAndId}
+                          ariaLabel={blog.title}
+                        />
+                        <DeleteBlogBtn
+                          deleteHref={slugAndId}
+                          ariaLabel={blog.title}
+                        />
                       </td>
                     </tr>
                   );
@@ -88,30 +84,26 @@ export default async function DashboardPage() {
             sortedBlogs.map((blog) => {
               const slug = slugify(blog.title);
               const slugAndId = `${slug}-${blog.id}`;
+
               return (
                 <div
                   key={blog.id}
                 >
-                  <h2 className="text-lg font-semibold line-clamp-2 md:text-xl">{blog.title}</h2>
+                  <div className="flex justify-between items-center gap-x-4 sm:gap-x-8">
+                    <h2 className="text-lg font-semibold line-clamp-2 md:text-xl">{blog.title}</h2>
+                    <div className="mt-2 flex items-center gap-2">
+                      <EditBlogBtn
+                        editHref={slugAndId}
+                        ariaLabel={blog.title}
+                      />
+                      <DeleteBlogBtn
+                        deleteHref={slugAndId}
+                        ariaLabel={blog.title}
+                      />
+                    </div>
+                  </div>
                   <p className="mt-1 text-sm">{blog.createdAt}</p>
                   <p className="text-gray-700 mt-2 text-sm line-clamp-3">{blog.summary}</p>
-                  <div className="mt-2 space-x-2">
-                    <Link
-                      href={`/edit/${slugAndId}`}
-                      aria-label={`Edit ${blog.title}`}
-                      className="bg-[hsl(205,100%,33%)] text-[#E6E6E6] inline-block py-1 px-2 rounded-lg text-sm font-medium"
-                    >
-                      <FaEdit className="w-4 h-4" />
-                    </Link>
-
-                    <Link
-                      href={`/delete/${slugAndId}`}
-                      aria-label={`Delete ${blog.title}`}
-                      className="bg-[hsl(0,100%,33%)] text-[#E6E6E6] inline-block py-1 px-2 rounded-lg text-sm font-medium"
-                    >
-                      <FaTrash className="w-4 h-4" />
-                    </Link>
-                  </div>
                 </div>
               );
             })
