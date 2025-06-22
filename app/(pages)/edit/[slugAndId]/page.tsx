@@ -1,3 +1,4 @@
+import EditBlogForm from "@/app/components/pages/dashboard/EditBlogForm";
 import { getBlogs } from "@/lib/blogs";
 import { notFound } from "next/navigation";
 
@@ -11,7 +12,7 @@ export default async function EditBlogPage({ params }: { params: Promise<{ slugA
   if (!blog) return notFound();
 
   return (
-    <main className="pt-32 px-6 max-w-7xl mx-auto lg:pt-40">
+    <main className="pt-32 pb-16 px-6 max-w-2xl mx-auto lg:pt-40">
       <header>
         <h1 className="text-4xl font-semibold text-center sm:text-5xl">
           Edit Blog
@@ -20,12 +21,7 @@ export default async function EditBlogPage({ params }: { params: Promise<{ slugA
           Need to make any changes to the blog? Edit the blog and save for changes to be applied.
         </p>
       </header>
-      <div>
-        <h2>
-          {blog.title}
-        </h2>
-        <p>{blog.id}</p>
-      </div>
+      <EditBlogForm initialData={blog} />
     </main>
   );
 }
