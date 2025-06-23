@@ -123,7 +123,7 @@ export default function EditBlogForm({ initialData }: { initialData: BlogProps }
   };
 
   return (
-    <form onSubmit={handleSubmit} aria-label="Edit Blog Form" className="mt-8 max-w-2xl mx-auto flex flex-col gap-4" noValidate>
+    <form onSubmit={handleSubmit} aria-label="Edit Blog Form" className="bg-[#ffffff] shadow shadow-[hsl(0,0%,80%)] mx-6 px-6 py-8 max-w-4xl flex flex-col gap-y-4 lg:mx-auto rounded-lg lg:px-20 lg:py-20" noValidate>
       <FormInput
         name="title"
         label="Blog title"
