@@ -23,7 +23,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
       <Image
         src={blog.img || PlaceholderImg}
         alt={`${blog.title} blog image`}
-        className="w-full h-64 object-cover rounded-lg"
+        className="w-full h-64 object-cover rounded-lg shadow shadow-[hsl(0,0%,80%)]"
         loading="lazy"
       />
       <div className="mt-2 flex justify-between">
