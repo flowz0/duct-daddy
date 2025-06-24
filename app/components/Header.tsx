@@ -1,12 +1,13 @@
 interface HeaderProps {
   children: React.ReactNode;
   subtitle?: string;
+  gradientBg?: boolean;
 }
 
-export default function Header({ children, subtitle }: HeaderProps) {
+export default function Header({ children, subtitle, gradientBg }: HeaderProps) {
   return (
-    <header className="pt-20 px-6 max-w-7xl mx-auto">
-      <div className="py-20">
+    <header className={`${gradientBg ? "bg-gradient-to-b from-[#0080DB] to-[hsl(195,100%,43%)] text-[#E6E6E6]" : "text-[#333333]"} pt-20`}>
+      <div className="px-6 py-20 max-w-7xl mx-auto">
         <h1 className="text-4xl font-semibold text-center sm:text-5xl">
           {children}
         </h1>

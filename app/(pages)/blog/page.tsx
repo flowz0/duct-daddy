@@ -9,7 +9,7 @@ export default function Blog() {
     <>
       <article>
         <div>
-          <Header>
+          <Header gradientBg>
             Discover our latest blogs
           </Header>
           <div className="bg-[#ffffff] px-6">
