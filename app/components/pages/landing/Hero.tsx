@@ -13,7 +13,7 @@ export default function Hero() {
         </h1>
         <Link href="/booking" className="bg-[#0080DB] text-[#E6E6E6] mt-12 py-3 px-6 flex items-center gap-x-3 font-semibold rounded-md hover:bg-[hsl(205,100%,33%)] active:bg-[hsl(205,100%,23%)]">
           <FaCalendarAlt className="w-4 h-4" />
-          Book Online
+          Book online
         </Link>
         <div className="flex items-center gap-x-2 mt-8">
           <span className="font-semibold">5.0</span>
