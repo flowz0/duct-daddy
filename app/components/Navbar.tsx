@@ -79,7 +79,7 @@ export default function Navbar() {
                   } `}
               >
                 <FaCalendarAlt className="w-4 h-4" />
-                Book Online
+                Book online
               </Link>
             </>
           )}
