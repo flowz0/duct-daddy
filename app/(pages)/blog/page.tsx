@@ -13,7 +13,7 @@ export default function Blog() {
             Discover our latest blogs
           </Header>
           <div className="bg-[#ffffff] px-6">
-            <div className="py-20 flex flex-col gap-y-16 max-w-7xl mx-auto">
+            <div className="pt-12 pb-20 flex flex-col gap-y-16 max-w-7xl mx-auto">
               <div>
                 <h2 className="text-2xl font-semibold md:text-3xl">Featured blogs</h2>
                 <FeaturedBlogs />
